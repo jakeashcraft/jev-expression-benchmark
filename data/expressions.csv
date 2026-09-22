@@ -1,0 +1,976 @@
+Name,ExpressionScript
+Caustic Circulation,CIP_01_Caustic_Supply_Valve == true && CIP_01_Caustic_Return_Valve == true && CIP_01_Return_Temp > 150
+Caustic Circulation,CIP_01_Caustic_Return_Valve == true && CIP_01_Caustic_Supply_Valve == false && CIP_01_Step_No > 30
+HS_FT,HS_FT > 78
+Caustic Heat to Temperature,CIP_01_Caustic_Supply_Valve == true && CIP_01_Caustic_Return_Valve == false && CIP_01_Supply_Pump == true && CIP_01_Return_Temp < 110
+Caustic Heat to Temperature,CIP_01_Caustic_Supply_Valve == true && CIP_01_Caustic_Return_Valve == true && CIP_01_Return_Temp > 150
+Fresh Water Rinse Recovery,CIP_01_Fresh_Water_Supply_Valve == true && CIP_01_Caustic_Return_Valve == true && CIP_01_Caustic_Supply_Valve == false
+Fresh Water Rinse Recovery,CIP_01_Caustic_Return_Valve == false
+Fresh Water Rinse to Drain,CIP_01_Fresh_Water_Supply_Valve == true && CIP_01_Supply_Pump == true && CIP_01_Caustic_Return_Valve == false && CIP_01_Caustic_Supply_Valve == false && CIP_01_Sanitizer_Pump == false && CIP_01_Step_No < 75
+Fresh Water Rinse to Drain,CIP_01_Fresh_Water_Supply_Valve == false
+Sanitize Water,CIP_01_Sanitizer_Pump == true && CIP_01_Fresh_Water_Supply_Valve == true && CIP_01_Supply_Pump == true && CIP_01_Step_No == 72
+Sanitize Water,CIP_01_Fresh_Water_Supply_Valve == false
+Sanitizer to Drain,CIP_01_Sanitizer_Pump == true && CIP_01_Supply_Pump == true && CIP_01_Fresh_Water_Supply_Valve == true && CIP_01_Step_No == 72
+Sanitizer to Drain,CIP_01_Fresh_Water_Supply_Valve == false
+Caustic Circulation,CIP_02_Caustic_Supply_Valve == true && CIP_02_Caustic_Return_Valve == true && CIP_02_Return_Temp > 150
+Caustic Circulation,CIP_02_Caustic_Return_Valve == true && CIP_02_Caustic_Supply_Valve == false && CIP_02_Step_No > 32
+Caustic Heat to Temperature,CIP_02_Caustic_Supply_Valve == true && CIP_02_Caustic_Return_Valve == false && CIP_02_Supply_Pump == true && CIP_02_Return_Temp < 110
+Caustic Heat to Temperature,CIP_02_Caustic_Supply_Valve == true && CIP_02_Caustic_Return_Valve == true && CIP_02_Return_Temp > 150
+Fresh Water Rinse Recovery,CIP_02_Fresh_Water_Supply_Valve == true && CIP_02_Caustic_Return_Valve == true && CIP_02_Caustic_Supply_Valve == false
+Fresh Water Rinse Recovery,CIP_02_Caustic_Return_Valve == false
+Fresh Water Rinse to Drain,CIP_02_Fresh_Water_Supply_Valve == true && CIP_02_Supply_Pump == true && CIP_02_Sanitizer_Pump == false && CIP_02_Caustic_Return_Valve == false && CIP_02_Caustic_Supply_Valve == false && CIP_02_Step_No < 70
+Fresh Water Rinse to Drain,CIP_02_Fresh_Water_Supply_Valve == false
+Fresh Water Rinse to Drain,CIP_02_Fresh_Water_Supply_Valve == true && CIP_02_Supply_Pump == true && CIP_02_Sanitizer_Pump == false && CIP_02_Caustic_Return_Valve == false && CIP_02_Caustic_Supply_Valve == false && CIP_02_Step_No < 70
+Fresh Water Rinse to Drain,CIP_02_Fresh_Water_Supply_Valve == false
+Sanitize Water,CIP_02_Sanitizer_Pump == true && CIP_02_Fresh_Water_Supply_Valve == true && CIP_02_Supply_Pump == true && CIP_02_Step_No == 72
+Sanitize Water,CIP_02_Fresh_Water_Supply_Valve == false
+Sanitizer to Drain,CIP_02_Sanitizer_Pump == true && CIP_02_Fresh_Water_Supply_Valve == true && CIP_02_Supply_Pump == true && CIP_02_Step_No == 72
+Sanitizer to Drain,CIP_02_Fresh_Water_Supply_Valve == false
+Caustic Circulation,CIP_03_Caustic_Supply_Valve == true && CIP_03_Caustic_Return_Valve == true && CIP_03_Step_No == 6 && CIP_03_Return_Temp > 150
+Caustic Circulation,CIP_03_Step_No != 6
+Caustic Heat to Temperature,CIP_03_Caustic_Supply_Valve == true && CIP_03_Caustic_Return_Valve == false && CIP_03_Return_Temp < 110
+Caustic Heat to Temperature,CIP_03_Caustic_Supply_Valve == true && CIP_03_Caustic_Return_Valve == true && CIP_03_Return_Temp > 150
+Drain,CIP_03_Step_No == 15
+Drain,CIP_03_Step_No != 15
+Fresh Water Rinse to Drain,CIP_03_Step_No == 1 || CIP_03_Step_No == 4 || CIP_03_Step_No == 8 || CIP_03_Step_No == 12
+Fresh Water Rinse to Drain,CIP_03_Step_No != 1 && CIP_03_Step_No != 4 && CIP_03_Step_No != 8 && CIP_03_Step_No != 12
+Sanitize Water,CIP_03_Step_No >= 13 && CIP_03_Step_No <= 14
+Sanitize Water,CIP_03_Step_No <= 13 && CIP_03_Step_No >= 14
+Sanitizer to Drain,CIP_03_Step_No >= 13 && CIP_03_Step_No <= 14
+Sanitizer to Drain,CIP_03_Step_No <= 13 && CIP_03_Step_No >= 14
+Caustic Circulation,CIP_04_Caustic_Supply_Valve == true && CIP_04_Caustic_Return_Valve == true && CIP_04_Return_Temp > 150
+Caustic Circulation,CIP_04_Caustic_Return_Valve == true && CIP_04_Caustic_Supply_Valve == false && CIP_05_Step > 33
+Caustic Heat to Temperature,CIP_04_Caustic_Supply_Valve == true && CIP_04_Caustic_Return_Valve == false && CIP_04_Return_Temp < 110
+Caustic Heat to Temperature,CIP_04_Caustic_Supply_Valve == true && CIP_04_Caustic_Return_Valve == true && CIP_04_Return_Temp > 150
+Fresh Water Rinse to Drain,CIP_04_Sanitizer_Pump == false && CIP_04_Fresh_Water_Supply_Valve == true && CIP_04_Supply_Pump == true && CIP_04_Caustic_Return_Valve == false && CIP_04_Caustic_Supply_Valve == false && CIP_05_Step < 70
+Fresh Water Rinse to Drain,CIP_04_Fresh_Water_Supply_Valve == false
+Sanitize Water,CIP_04_Sanitizer_Pump == true && CIP_04_Fresh_Water_Supply_Valve == true && CIP_04_Supply_Pump == true && CIP_05_Step == 72
+Sanitize Water,CIP_04_Fresh_Water_Supply_Valve == false
+Sanitizer to Drain,CIP_04_Sanitizer_Pump == true && CIP_04_Fresh_Water_Supply_Valve == true && CIP_04_Supply_Pump == true && CIP_05_Step == 72
+Sanitizer to Drain,CIP_04_Fresh_Water_Supply_Valve == false
+Acid Circulation,CIP_06_Acid_Supply_Valve == true && CIP_06_Acid_Return_Valve == true && CIP_06_Return_Temp > 130
+Acid Circulation,CIP_06_Acid_Supply_Valve == 0 || CIP_06_Step != 7
+Acid Heat to Temperature,CIP_06_Acid_Supply_Valve == true && CIP_06_Acid_Return_Valve == false && CIP_06_Return_Temp < 110
+Acid Heat to Temperature,CIP_06_Acid_Return_Valve == true && CIP_06_Caustic_Supply_Valve == true && CIP_06_Return_Temp > 135
+Acid Recovery,CIP_06_Step == 8 && CIP_06_Acid_Return_Valve == true && CIP_06_Acid_Supply_Valve == false
+Acid Recovery,CIP_06_Step != 8 || CIP_06_Acid_Return_Valve != true || CIP_06_Acid_Supply_Valve != false
+Caustic Circulation,CIP_06_Caustic_Supply_Valve == true && CIP_06_Caustic_Return_Valve == true && CIP_06_Return_Temp > 150
+Caustic Circulation,CIP_06_Caustic_Supply_Valve == false || CIP_06_Step != 3
+Caustic Heat to Temperature,CIP_06_Caustic_Supply_Valve == true && CIP_06_Caustic_Return_Valve == false && CIP_06_Return_Temp < 110
+Caustic Heat to Temperature,CIP_06_Caustic_Return_Valve == true && CIP_06_Caustic_Supply_Valve == true && CIP_06_Return_Temp > 150
+Caustic Recovery,CIP_06_Step == 4 && CIP_06_Caustic_Return_Valve == true && CIP_06_Caustic_Supply_Valve == false
+Caustic Recovery,CIP_06_Step != 4 && CIP_06_Caustic_Return_Valve != true && CIP_06_Caustic_Supply_Valve != false
+Fresh Water Rinse to Drain,CIP_06_Fresh_Water_To_Rinse_Tk_Valve == true && CIP_06_Acid_Return_Valve == false && CIP_06_Caustic_Return_Valve == false && CIP_06_Step != 12 && CIP_06_Step != 1
+Fresh Water Rinse to Drain,CIP_06_Fresh_Water_To_Rinse_Tk_Valve != true && CIP_06_Acid_Return_Valve != false && CIP_06_Caustic_Return_Valve != false && CIP_06_Step == 12 && CIP_06_Step == 1
+Pre Rinse,CIP_06_Step == true
+Pre Rinse,CIP_06_Step != true
+Sanitize to Drain,CIP_06_Step >= 10 && CIP_06_Step <= 11
+Sanitize to Drain,CIP_06_Step <= 10 && CIP_06_Step >= 11
+Sanitize Water,CIP_06_Step >= 10 && CIP_06_Step <= 11
+Sanitize Water,CIP_06_Step <= 10 && CIP_06_Step >= 11
+Acid Circulation,CIP_07_Step == 9 && CIP_07_Acid_Supply_Valve == true && CIP_07_Acid_Return_Valve == true
+Acid Circulation,CIP_07_Step != 9 && CIP_07_Acid_Supply_Valve != true && CIP_07_Acid_Return_Valve != true
+Acid Heat to Temperature,CIP_07_Step == 999
+Acid Heat to Temperature,CIP_07_Step != 999
+Caustic Circulation,CIP_07_Step == 5 && CIP_07_Caustic_Supply_Valve == true && CIP_07_Caustic_Return_Valve == true
+Caustic Circulation,CIP_07_Step != 5
+Caustic Heat to Temperature,CIP_07_Step == 999
+Caustic Heat to Temperature,CIP_07_Step != 999
+Drain,CIP_07_Step == 13 || CIP_07_Step == 14
+Drain,CIP_07_Step != 13 || CIP_07_Step != 14
+Fresh Water Rinse to Drain,CIP_07_Step >= 1 && CIP_07_Step <= 4 || CIP_07_Step == 11 || CIP_07_Step == 7
+Fresh Water Rinse to Drain,CIP_07_Step <= 1 && CIP_07_Step >= 4 || CIP_07_Step != 11 || CIP_07_Step != 7
+Rinse Recovery,CIP_07_Step == 6 && CIP_07_Caustic_Supply_Valve == false && CIP_07_Caustic_Return_Valve == true || CIP_07_Step == 9 && CIP_07_Acid_Supply_Valve == false && CIP_07_Acid_Return_Valve == true
+Rinse Recovery,CIP_07_Acid_Return_Valve == false && CIP_07_Caustic_Return_Valve == false
+Sanitize Water,CIP_07_Step == 12
+Sanitize Water,CIP_07_Step != 12
+Sanitizer to Drain,CIP_07_Step == 12
+Sanitizer to Drain,CIP_07_Step != 12
+Acid Circulation,CIP_08_Step == 9 && CIP_08_Acid_Supply_Valve == true && CIP_08_Acid_Return_Valve == true
+Acid Circulation,CIP_08_Acid_Supply_Valve == false
+Acid Heat to Temp,CIP_08_Step == 9 && CIP_08_Supply_Temp < 125
+Acid Heat to Temp,CIP_08_Acid_Supply_Valve == false || CIP_08_Supply_Temp >= 140
+Caustic Circulation,CIP_08_Step == 5 && CIP_08_Caustic_Supply_Valve == true && CIP_08_Caustic_Return_Valve == true
+Caustic Circulation,CIP_08_Step != 5 || CIP_08_Supply_Temp <= 120
+Caustic Heat to Temp,CIP_08_Step == 5 && CIP_08_Supply_Temp < 120
+Caustic Heat to Temp,CIP_08_Caustic_Supply_Valve == false || CIP_08_Supply_Temp >= 140
+Drain,CIP_08_Step == 13 || CIP_08_Step == 14
+Drain,CIP_08_Step != 13 || CIP_08_Step != 14
+Fresh Water Rinse to Drain,CIP_08_Step >= 1 && CIP_08_Step <= 4 || CIP_08_Step == 11 || CIP_08_Step == 7
+Fresh Water Rinse to Drain,CIP_08_Step <= 1 && CIP_08_Step >= 4 || CIP_08_Step != 11 || CIP_08_Step != 7
+Sanitize to Drain,CIP_08_Step == 12
+Sanitize to Drain,CIP_08_Step != 12
+Sanitize Water,CIP_08_Step == 12
+Sanitize Water,CIP_08_Step != 12
+Acid Circulation,CIP_09_Step == 9 && CIP_09_Acid_Supply_Valve == true && CIP_09_Acid_Return_Valve == 1
+Acid Circulation,CIP_09_Acid_Supply_Valve != false
+Acid Heat to Temp,CIP_09_Step == 9 && CIP_09_Supply_Temp < 125
+Acid Heat to Temp,CIP_09_Acid_Supply_Valve == false || CIP_09_Supply_Temp >= 140
+Caustic Circulation,CIP_09_Step == 5 && CIP_09_Caustic_Supply_Valve == true && CIP_09_Temp_Hold == false && CIP_09_Drain_Valve == false && CIP_09_Caustic_Return_Valve == 1
+Caustic Circulation,CIP_09_Step != 5 || CIP_09_Supply_Temp <= 125
+Caustic Heat to Temp,CIP_09_Step == 5 && CIP_09_Supply_Temp < 125
+Caustic Heat to Temp,CIP_09_Caustic_Supply_Valve == false || CIP_09_Supply_Temp >= 140
+Drain,CIP_09_Step == 13 || CIP_09_Step == 14 || CIP_09_Step == 4
+Drain,CIP_09_Step != 13 || CIP_09_Step != 14 || CIP_09_Step != 4
+Fresh Water Rinse to Drain,CIP_09_Step >= 1 && CIP_09_Step <= 3 || CIP_09_Step == 11 || CIP_09_Step == 7
+Fresh Water Rinse to Drain,CIP_09_Step <= 1 && CIP_09_Step >= 3 || CIP_09_Step != 11 || CIP_09_Step != 7
+Rinse Recovery,CIP_09_Step == 6 && CIP_09_Caustic_Supply_Valve == false && CIP_09_Caustic_Return_Valve == 1 || CIP_09_Step == 9 && CIP_09_Acid_Supply_Valve == false && CIP_09_Acid_Return_Valve == 1
+Rinse Recovery,CIP_09_Acid_Return_Valve == false && CIP_09_Caustic_Return_Valve == false
+Sanitize to Drain,CIP_09_Step == 12
+Sanitize to Drain,CIP_09_Step != 12
+Sanitize Water,CIP_09_Step == 12
+Sanitize Water,CIP_09_Step != 12
+Acid Circulation,CIP_10_Step == 9 && CIP_10_Acid_Supply_Valve == true && CIP_10_Acid_Return_Valve == 1
+Acid Circulation,CIP_10_Step != 9 && CIP_10_Acid_Supply_Valve != true && CIP_10_Acid_Return_Valve != 1
+Acid Heat to Temp,CIP_10_Step == 9 && CIP_10_Supply_Temp < 125
+Acid Heat to Temp,CIP_10_Acid_Supply_Valve == false || CIP_10_Supply_Temp >= 140
+Caustic Circulation,CIP_10_Step == 5 && CIP_10_Caustic_Supply_Valve == true && CIP_10_Caustic_Return_Valve == 1
+Caustic Circulation,CIP_10_Step != 5 || CIP_10_Supply_Temp <= 125
+Caustic Heat to Temp,CIP_10_Step == 5 && CIP_10_Supply_Temp < 125
+Caustic Heat to Temp,CIP_10_Caustic_Supply_Valve == false || CIP_10_Supply_Temp >= 140
+Drain,CIP_10_Step == 13 || CIP_10_Step == 14
+Drain,CIP_10_Step != 13 || CIP_10_Step != 14
+Fresh Water Rinse to Drain,CIP_10_Step >= 1 && CIP_10_Step <= 3 || CIP_10_Step == 11 || CIP_10_Step == 7
+Fresh Water Rinse to Drain,CIP_10_Step <= 1 && CIP_10_Step >= 3 || CIP_10_Step != 11 || CIP_10_Step != 7
+Rinse Recovery,CIP_10_Step == 6 && CIP_10_Caustic_Supply_Valve == false && CIP_10_Caustic_Return_Valve == 1 || CIP_10_Step == 9 && CIP_10_Acid_Supply_Valve == false && CIP_10_Acid_Return_Valve == 1
+Rinse Recovery,CIP_10_Acid_Return_Valve == false && CIP_10_Caustic_Return_Valve == false
+Sanitize to Drain,CIP_10_Step == 12
+Sanitize to Drain,CIP_10_Step != 12
+Sanitize Water,CIP_10_Step == 12
+Sanitize Water,CIP_10_Step != 12
+Acid Circulation,CIP_11_Step == 9 && CIP_11_Acid_Supply_Valve == true && CIP_11_Acid_Return_Valve == 1
+Acid Circulation,CIP_11_Step != 9 && CIP_11_Acid_Supply_Valve != true && CIP_11_Acid_Return_Valve != 1
+Acid Heat to Temp,CIP_11_Step == 9 && CIP_11_Supply_Temp < 125
+Acid Heat to Temp,CIP_11_Acid_Supply_Valve != false || CIP_11_Supply_Temp <= 140
+Caustic Circulation,CIP_11_Step == 5 && CIP_11_Caustic_Supply_Valve == true && CIP_11_Caustic_Return_Valve == 1
+Caustic Circulation,CIP_11_Step != 5 || CIP_11_Supply_Temp <= 125
+Caustic Heat to Temp,CIP_11_Step == 5 && CIP_11_Supply_Temp < 125
+Caustic Heat to Temp,CIP_11_Caustic_Supply_Valve == false || CIP_11_Supply_Temp >= 140
+Drain,CIP_11_Step == 13 || CIP_11_Step == 14
+Drain,CIP_11_Step != 13 || CIP_11_Step != 14
+Fresh Water Rinse to Drain,CIP_11_Step >= 1 && CIP_11_Step <= 3 || CIP_11_Step == 11 || CIP_11_Step == 7
+Fresh Water Rinse to Drain,CIP_11_Step <= 1 && CIP_11_Step >= 3 || CIP_11_Step != 11 || CIP_11_Step != 7
+Rinse Recovery,CIP_11_Step == 6 && CIP_11_Caustic_Supply_Valve == false && CIP_11_Caustic_Return_Valve == 1 || CIP_11_Step == 9 && CIP_11_Acid_Supply_Valve == false && CIP_11_Acid_Return_Valve == 1
+Rinse Recovery,CIP_11_Acid_Return_Valve == false && CIP_11_Caustic_Return_Valve == false
+Sanitize to Drain,CIP_11_Step == 12
+Sanitize to Drain,CIP_11_Step != 12
+Sanitize Water,CIP_11_Step == 12
+Sanitize Water,CIP_11_Step != 12
+Acid Circulation,CIP_12_Return_Temp >= 145 && CIP_12_Acid1_Seq == true || CIP_12_Acid2_Seq == 1
+Acid Circulation,CIP_12_Acid1_Seq == false && CIP_12_Acid2_Seq == false
+Acid Heat to Temp,CIP_12_Return_Temp < 125 && CIP_12_Acid1_Seq == true || CIP_12_Acid2_Seq == 1
+Acid Heat to Temp,CIP_12_Return_Temp >= 145 || CIP_12_Acid1_Seq == false && CIP_12_Acid2_Seq == false
+Caustic Circulation,CIP_12_Caustic_Seq == true && CIP_12_Return_Temp >= 165
+Caustic Circulation,CIP_12_Caustic_Seq == false || CIP_12_Return_Temp < 145
+Caustic Heat to Temp,CIP_12_Caustic_Seq == true && CIP_12_Return_Temp < 145
+Caustic Heat to Temp,CIP_12_Return_Temp >= 165 || CIP_12_Caustic_Seq == false
+Fresh Water Rinse,CIP_12_Rinse_1_Seq == true || CIP_12_Rinse_2_Seq == true || CIP_12_Rinse_3_Seq == true || CIP_12_Rinse_4_Seq == 1
+Fresh Water Rinse,CIP_12_Rinse_1_Seq != true || CIP_12_Rinse_2_Seq != true || CIP_12_Rinse_3_Seq != true || CIP_12_Rinse_4_Seq != 1
+Recovered Water Rinse,CIP_12_Recovered_Water_Supply_Valve == true && CIP_12_Recovered_Water_Return_Valve == 1 && CIP_12_Object_ID == true && CIP_12_Object_ID == 2
+Recovered Water Rinse,CIP_12_Recovered_Water_Supply_Valve != true && CIP_12_Recovered_Water_Return_Valve != 1 && CIP_12_Object_ID != true && CIP_12_Object_ID != 2
+Sanitize Water,CIP_12_Sanitize_Seq == true
+Sanitize Water,CIP_12_Supply_Pump == false
+Sanitizer to Drain,CIP_12_Sanitize_Seq == true
+Sanitizer to Drain,CIP_12_Supply_Pump == false
+Water Push Acid,CIP_12_Acid_Supply_Valve == false && CIP_12_Drain_Valve_1 == true && CIP_12_Object_ID == true && CIP_12_Object_ID == 2
+Water Push Acid,CIP_12_Acid_Supply_Valve != false && CIP_12_Drain_Valve_1 != true && CIP_12_Object_ID != true && CIP_12_Object_ID != 2
+Water Push Caustic,CIP_12_Caustic_Supply_Valve == false && CIP_12_Drain_Valve_2 == true && CIP_12_Object_ID == true && CIP_12_Object_ID == 2
+Water Push Caustic,CIP_12_Caustic_Supply_Valve != false && CIP_12_Drain_Valve_2 != true && CIP_12_Object_ID != true && CIP_12_Object_ID != 2
+Acid Circulation Type 1,CIP_13_Acid_Supply_Valve == true && CIP_13_Acid_Return_Valve == true && CIP_13_Return_Temp >= 130 && CIP_13_Acid_Seq == true && CIP_13_Acid_Type == true
+Acid Circulation Type 1,CIP_13_Acid_Seq == false
+Acid Circulation Type 2,CIP_13_Acid_Supply_Valve == true && CIP_13_Acid_Return_Valve == true && CIP_13_Return_Temp >= 130 && CIP_13_Acid_Seq == true && CIP_13_Acid_Type == false
+Acid Circulation Type 2,CIP_13_Acid_Seq == false
+Acid Heat to Temp Type 1,CIP_13_Acid_Supply_Valve == true && CIP_13_Acid_Return_Valve == false && CIP_13_Return_Temp < 125 && CIP_13_Acid_Seq == true && CIP_13_Acid_Type == true
+Acid Heat to Temp Type 1,CIP_13_Acid_Seq == false || CIP_13_Return_Temp > 135 && CIP_13_Acid_Return_Valve == true && CIP_13_Acid_Supply_Valve == true
+Acid Heat to Temp Type 2,CIP_13_Acid_Supply_Valve == true && CIP_13_Acid_Return_Valve == false && CIP_13_Return_Temp < 125 && CIP_13_Acid_Seq == true && CIP_13_Acid_Type == false
+Acid Heat to Temp Type 2,CIP_13_Acid_Seq == false || CIP_13_Return_Temp > 135 && CIP_13_Acid_Return_Valve == true && CIP_13_Acid_Supply_Valve == true
+Acid Recovery,CIP_13_Step == 8
+Acid Recovery,CIP_13_Step != 8
+Caustic Circulation,CIP_13_Caustic_Supply_Valve == true && CIP_13_Caustic_Return_Valve == true && CIP_13_Return_Temp >= 130 && CIP_13_Caustic_Seq == true
+Caustic Circulation,CIP_13_Caustic_Seq == false
+Caustic Circulation Chlorine Addition,CIP_13_Caustic_Supply_Valve == true && CIP_13_Caustic_Return_Valve == true && CIP_13_Return_Temp >= 145 && CIP_13_Caustic_Seq == true
+Caustic Circulation Chlorine Addition,CIP_13_Caustic_Seq == false
+Caustic Heat to Temp,CIP_13_Caustic_Supply_Valve == true && CIP_13_Caustic_Return_Valve == false && CIP_13_Return_Temp < 125 && CIP_13_Caustic_Seq == true
+Caustic Heat to Temp,CIP_13_Caustic_Seq == false || CIP_13_Return_Temp > 145 && CIP_13_Caustic_Return_Valve == true && CIP_13_Caustic_Supply_Valve == true
+Caustic Recovery,CIP_13_Step == 4
+Caustic Recovery,CIP_13_Step != 4
+Fresh Water Rinse,CIP_13_Rinse_1_Seq == true || CIP_13_Rinse_2_Seq == true || CIP_13_Rinses_Seq == true || CIP_13_PreRinse_Seq == true && CIP_13_Step != 4
+Fresh Water Rinse,CIP_13_Rinse_1_Seq != true || CIP_13_Rinse_2_Seq != true || CIP_13_Rinses_Seq != true || CIP_13_PreRinse_Seq != true && CIP_13_Step == 4
+Sanitize Water,CIP_13_Sanitizes_Seq == true
+Sanitize Water,CIP_13_Sanitizes_Seq != true
+Caustic Circulation,CIP_14_Caustic_Supply_Valve == true && CIP_14_Caustic_Return_Valve == true && CIP_14_Return_Temp >= 150 && CIP_14_Step == 10
+Caustic Circulation,CIP_14_Step != 10
+Caustic Heat to Temp,CIP_14_Caustic_Supply_Valve == true && CIP_14_Caustic_Return_Valve == false && CIP_14_Return_Temp < 135 && CIP_14_Step == 10
+Caustic Heat to Temp,CIP_14_Step != 10 || CIP_14_Return_Temp > 150
+Chlorine Circulation,CIP_14_Acid_Supply_Valve == true && CIP_14_Acid_Return_Valve == true && CIP_14_Return_Temp >= 125 && CIP_14_Step == 14
+Chlorine Circulation,CIP_14_Step != 14
+Chlorine Heat to Temp,CIP_14_Acid_Supply_Valve == true && CIP_14_Acid_Return_Valve == true && CIP_14_Return_Temp < 110 && CIP_14_Step == 14
+Chlorine Heat to Temp,CIP_14_Acid_Supply_Valve == false || CIP_14_Return_Temp >= 125 || CIP_14_Step != 14
+Drain,CIP_14_Step == 5 || CIP_14_Step == 13 || CIP_14_Step == 17 || CIP_14_Step == 20
+Drain,CIP_14_Step != 5 || CIP_14_Step != 13 || CIP_14_Step != 17 || CIP_14_Step != 20
+Fresh Water Rinse,CIP_14_Step == 4 || CIP_14_Step == 12 || CIP_14_Step == 16 && CIP_14_Acid_Return_Valve == false && CIP_14_Caustic_Return_Valve == false
+Fresh Water Rinse,CIP_14_Step != 4 || CIP_14_Step != 12 || CIP_14_Step != 16 && CIP_14_Acid_Return_Valve != false && CIP_14_Caustic_Return_Valve != false
+Rinse Recovery,CIP_14_Step == 11 && CIP_14_Caustic_Supply_Valve == false && CIP_14_Caustic_Return_Valve == true || CIP_14_Step == 15 && CIP_14_Acid_Supply_Valve == false && CIP_14_Acid_Return_Valve == true
+Rinse Recovery,CIP_14_Acid_Return_Valve == false && CIP_14_Step > 14 || CIP_14_Caustic_Return_Valve == false && CIP_14_Step < 14
+Sanitize Water,CIP_14_Step == 18 || CIP_14_Step == 19
+Sanitize Water,CIP_14_Step != 18 || CIP_14_Step != 19
+Sanitizer to Drain,CIP_14_Step == 18
+Sanitizer to Drain,CIP_14_Step != 18
+Caustic Circulation,CIP_15_Caustic_Supply_Valve == true && CIP_15_Caustic_Return_Valve == true && CIP_15_Return_Temp >= 150 && CIP_15_Step == 10
+Caustic Circulation,CIP_15_Step != 10
+Chlorine Heat to Temp,CIP_15_Acid_Supply_Valve == true && CIP_15_Acid_Return_Valve == true && CIP_15_Return_Temp < 125 && CIP_15_Step == 14
+Chlorine Heat to Temp,CIP_15_Acid_Supply_Valve == false || CIP_15_Return_Temp >= 140 || CIP_15_Step != 14
+Drain,CIP_15_Step == 5 || CIP_15_Step == 13 || CIP_15_Step == 17 || CIP_15_Step == 20
+Drain,CIP_15_Step != 5 || CIP_15_Step != 13 || CIP_15_Step != 17 || CIP_15_Step != 20
+Fresh Water Rinse,CIP_15_Step == 4 || CIP_15_Step == 12 || CIP_15_Step == 16 && CIP_15_Acid_Return_Valve == false && CIP_15_Caustic_Return_Valve == false
+Fresh Water Rinse,CIP_15_Step != 4 || CIP_15_Step != 12 || CIP_15_Step != 16 && CIP_15_Acid_Return_Valve != false && CIP_15_Caustic_Return_Valve != false
+Rinse Recovery,CIP_15_Step >= 11 && CIP_15_Step <= 12 && CIP_15_Caustic_Supply_Valve == false && CIP_15_Caustic_Return_Valve == true || CIP_15_Step >= 15 && CIP_15_Step <= 16 && CIP_15_Acid_Supply_Valve == false && CIP_15_Acid_Return_Valve == true
+Rinse Recovery,CIP_15_Step <= 11 && CIP_15_Step >= 12 && CIP_15_Caustic_Supply_Valve != false && CIP_15_Caustic_Return_Valve != true || CIP_15_Step <= 15 && CIP_15_Step >= 16 && CIP_15_Acid_Supply_Valve != false && CIP_15_Acid_Return_Valve != true
+Sanitize Water,CIP_15_Step == 18 || CIP_15_Step == 19
+Sanitize Water,CIP_15_Step != 18 || CIP_15_Step != 19
+Sanitizer to Drain,CIP_15_Step == 18
+Sanitizer to Drain,CIP_15_Step != 18
+Caustic Circulation,CIP_16_Caustic_Supply_Valve == true && CIP_16_Caustic_Return_Valve == true && CIP_16_Return_Temp >= 150 && CIP_16_Step == 10
+Caustic Circulation,CIP_16_Step != 10
+Caustic Heat to Temp,CIP_16_Caustic_Supply_Valve == true && CIP_16_Caustic_Return_Valve == false && CIP_16_Return_Temp < 135 && CIP_16_Step == 10
+Caustic Heat to Temp,CIP_16_Caustic_Supply_Valve == false || CIP_16_Return_Temp >= 150 || CIP_16_Step != 10
+Chlorine Circulation,CIP_16_Acid_Supply_Valve == true && CIP_16_Acid_Return_Valve == true && CIP_16_Return_Temp >= 140 && CIP_16_Step == 14
+Chlorine Circulation,CIP_16_Step != 14
+Chlorine Heat to Temp,CIP_16_Acid_Supply_Valve == true && CIP_16_Acid_Return_Valve == true && CIP_16_Return_Temp < 125 && CIP_16_Step == 14
+Chlorine Heat to Temp,CIP_16_Acid_Supply_Valve == false || CIP_16_Return_Temp >= 140 || CIP_16_Step != 14
+Drain,CIP_16_Step == 5 || CIP_16_Step == 13 || CIP_16_Step == 17 || CIP_16_Step == 20
+Drain,CIP_16_Step != 5 || CIP_16_Step != 13 || CIP_16_Step != 17 || CIP_16_Step != 20
+Fresh Water Rinse,CIP_16_Step == true || CIP_16_Step == 4 || CIP_16_Step == 12 || CIP_16_Step == 16 && CIP_16_Step != 19 && CIP_16_Acid_Return_Valve == false && CIP_16_Caustic_Return_Valve == false
+Fresh Water Rinse,CIP_16_Step != true || CIP_16_Step != 4 || CIP_16_Step != 12 || CIP_16_Step != 16 && CIP_16_Step == 19 && CIP_16_Acid_Return_Valve != false && CIP_16_Caustic_Return_Valve != false
+Rinse Recovery,CIP_16_Step >= 11 && CIP_16_Step <= 12 && CIP_16_Caustic_Return_Valve == true && CIP_16_Caustic_Supply_Valve == false || CIP_16_Step >= 15 && CIP_16_Step <= 16 && CIP_16_Acid_Return_Valve == true && CIP_16_Acid_Supply_Valve == false
+Rinse Recovery,CIP_16_Step <= 11 && CIP_16_Step >= 12 && CIP_16_Caustic_Return_Valve != true && CIP_16_Caustic_Supply_Valve != false || CIP_16_Step <= 15 && CIP_16_Step >= 16 && CIP_16_Acid_Return_Valve != true && CIP_16_Acid_Supply_Valve != false
+Sanitize Water,CIP_16_Step == 18 || CIP_16_Step == 19
+Sanitize Water,CIP_16_Step != 18 || CIP_16_Step != 19
+Sanitizer to Drain,CIP_16_Step == 18
+Sanitizer to Drain,CIP_16_Step != 18
+Caustic Circulation,CIP_17_Caustic_Supply_Valve == true && CIP_17_Return_Temp > 150 && CIP_17_Step == 10
+Caustic Circulation,CIP_17_Step != 10
+Caustic Heat to Temp,CIP_17_Caustic_Supply_Valve == true && CIP_17_Caustic_Return_Valve == false && CIP_17_Return_Temp < 120 && CIP_17_Step == 10
+Caustic Heat to Temp,CIP_17_Caustic_Supply_Valve == false || CIP_17_Return_Temp >= 150 || CIP_17_Step != 10
+Chlorine Circulation,CIP_17_Acid_Supply_Valve == true && CIP_17_Acid_Return_Valve == true && CIP_17_Return_Temp > 140 && CIP_17_Step == 14
+Chlorine Circulation,CIP_17_Step != 14
+Chlorine Heat to Temp,CIP_17_Acid_Supply_Valve == true && CIP_17_Acid_Return_Valve == false && CIP_17_Return_Temp < 125 && CIP_17_Step == 14
+Chlorine Heat to Temp,CIP_17_Acid_Supply_Valve == false || CIP_17_Return_Temp >= 140 || CIP_17_Step != 14
+Drain,CIP_17_Step == 5 || CIP_17_Step == 13 || CIP_17_Step == 17 || CIP_17_Step == 20
+Drain,CIP_17_Step != 5 || CIP_17_Step != 13 || CIP_17_Step != 17 || CIP_17_Step != 20
+Fresh Water Rinse,CIP_17_Step == 4 || CIP_17_Step == 12 || CIP_17_Step == 16 && CIP_17_Acid_Return_Valve == false && CIP_17_Caustic_Return_Valve == false
+Fresh Water Rinse,CIP_17_Step != 4 || CIP_17_Step != 12 || CIP_17_Step != 16 && CIP_17_Acid_Return_Valve != false && CIP_17_Caustic_Return_Valve != false
+Rinse Recovery,CIP_17_Step >= 11 && CIP_17_Step <= 12 && CIP_17_Caustic_Supply_Valve == false && CIP_17_Caustic_Return_Valve == true || CIP_17_Step >= 15 && CIP_17_Step <= 16 && CIP_17_Acid_Supply_Valve == false && CIP_17_Acid_Return_Valve == true
+Rinse Recovery,CIP_17_Step <= 11 && CIP_17_Step >= 12 && CIP_17_Caustic_Supply_Valve != false && CIP_17_Caustic_Return_Valve != true || CIP_17_Step <= 15 && CIP_17_Step >= 16 && CIP_17_Acid_Supply_Valve != false && CIP_17_Acid_Return_Valve != true
+Sanitize Water,CIP_17_Step == 18 || CIP_17_Step == 19
+Sanitize Water,CIP_17_Step != 18 || CIP_17_Step != 19
+Sanitizer to Drain,CIP_17_Step == 18
+Sanitizer to Drain,CIP_17_Step != 18
+Acid Circulation,CIP_18_Acid_Supply_Valve == true && CIP_18_Acid_Return_Valve == true && CIP_18_Supply_Temp >= 145 && CIP_18_Acid_Seq == true
+Acid Circulation,CIP_18_Step != 7
+Acid Heat to Temp,CIP_18_Acid_Supply_Valve == true && CIP_18_Acid_Return_Valve == true && CIP_18_Supply_Temp < 125 && CIP_18_Acid_Seq == true
+Acid Heat to Temp,CIP_18_Acid_Supply_Valve == true && CIP_18_Acid_Return_Valve == true && CIP_18_Supply_Temp < 125 && CIP_18_Acid_Seq == true
+Acid Recovery,CIP_18_Step == 8 || CIP_18_Step == 9
+Acid Recovery,CIP_18_Step != 8 || CIP_18_Step != 9
+Caustic Circulation,CIP_18_Caustic_Supply_Valve == true && CIP_18_Caustic_Return_Valve == true && CIP_18_Supply_Temp >= 145 && CIP_18_Caustic_Seq == true
+Caustic Circulation,CIP_18_Step != 3
+Caustic Heat to Temp,CIP_18_Caustic_Supply_Valve == true && CIP_18_Caustic_Return_Valve == true && CIP_18_Supply_Temp < 125 && CIP_18_Caustic_Seq == true
+Caustic Heat to Temp,CIP_18_Caustic_Supply_Valve == false || CIP_18_Supply_Temp >= 145 || CIP_18_Caustic_Seq == false
+Caustic Recovery,CIP_18_Step == 4 || CIP_18_Step == 5 && CIP_18_GW_Supply_Valve == false
+Caustic Recovery,CIP_18_Step != 4 || CIP_18_Step != 5 && CIP_18_GW_Supply_Valve != false
+Chlorine Addition,CIP_19_Chlorine_Pump == true && CIP_18_Step < 7
+Chlorine Addition,CIP_19_Chlorine_Pump != true && CIP_18_Step > 7
+Fresh Water Rinse,CIP_18_Step_No >= 1 && CIP_18_Step_No <= 2 && CIP_18_GW_Supply_Valve == false && CIP_18_Fresh_Water_Valve == true || CIP_18_Step_No >= 9 && CIP_18_Step_No <= 12 && CIP_18_GW_Supply_Valve == false && CIP_18_Fresh_Water_Valve == true
+Fresh Water Rinse,CIP_18_Step_No <= 1 && CIP_18_Step_No >= 2 && CIP_18_GW_Supply_Valve != false && CIP_18_Fresh_Water_Valve != true || CIP_18_Step_No <= 9 && CIP_18_Step_No >= 12 && CIP_18_GW_Supply_Valve != false && CIP_18_Fresh_Water_Valve != true
+Recovered Water Rinse,CIP_18_GW_Supply_Valve == true
+Recovered Water Rinse,CIP_18_GW_Supply_Valve != true
+Acid Circulation,CIP_20_Acid_Supply_Valve == true && CIP_20_Acid_Return_Valve == true && CIP_20_Supply_Temp >= 145 && CIP_20_Acid_Seq == true
+Acid Circulation,CIP_20_Step != 7
+Acid Heat to Temp,CIP_20_Acid_Supply_Valve == true && CIP_20_Acid_Return_Valve == true && CIP_20_Supply_Temp < 125 && CIP_20_Acid_Seq == true
+Acid Heat to Temp,CIP_20_Acid_Supply_Valve == false || CIP_20_Supply_Temp >= 145 || CIP_20_Acid_Seq == false
+Acid Recovery,CIP_20_Step == 8 || CIP_20_Step == 9
+Acid Recovery,CIP_20_Step != 8 || CIP_20_Step != 9
+Caustic Circulation,CIP_20_Caustic_Supply_Valve == true && CIP_20_Caustic_Return_Valve == true && CIP_20_Supply_Temp >= 145 && CIP_20_Caustic_Seq == true
+Caustic Circulation,CIP_20_Step != 3
+Caustic Heat to Temp,CIP_20_Caustic_Supply_Valve == true && CIP_20_Caustic_Return_Valve == true && CIP_20_Supply_Temp < 125 && CIP_20_Caustic_Seq == true
+Caustic Heat to Temp,CIP_20_Caustic_Supply_Valve == false || CIP_20_Supply_Temp >= 145 || CIP_20_Caustic_Seq == false
+Caustic Recovery,CIP_20_Step == 4 || CIP_20_Step == 5 && CIP_20_Supply_Valve == false
+Caustic Recovery,CIP_20_Step != 4 || CIP_20_Step != 5 && CIP_20_Supply_Valve != false
+Chlorine Addition,CIP_19_Chlorine_Pump == true && CIP_20_Step < 7
+Chlorine Addition,CIP_19_Chlorine_Pump == true && CIP_20_Step < 7
+Fresh Water Rinse,CIP_20_Step_No >= 1 && CIP_20_Step_No <= 2 && CIP_20_Supply_Valve == false && CIP_20_Fresh_Water_Valve == true || CIP_20_Step_No >= 5 && CIP_20_Step_No <= 6 && CIP_20_Supply_Valve == false && CIP_20_Fresh_Water_Valve == true || CIP_20_Step_No >= 9 && CIP_20_Step_No <= 12 && CIP_20_Supply_Valve == false && CIP_20_Fresh_Water_Valve == true
+Fresh Water Rinse,CIP_20_Step_No <= 1 && CIP_20_Step_No >= 2 && CIP_20_Supply_Valve != false && CIP_20_Fresh_Water_Valve != true || CIP_20_Step_No <= 5 && CIP_20_Step_No >= 6 && CIP_20_Supply_Valve != false && CIP_20_Fresh_Water_Valve != true || CIP_20_Step_No <= 9 && CIP_20_Step_No >= 12 && CIP_20_Supply_Valve != false && CIP_20_Fresh_Water_Valve != true
+Recovered Water Rinse,CIP_20_Supply_Valve == true
+Recovered Water Rinse,CIP_20_Supply_Valve != true
+Acid Addition/Heat to Temp,CIP_21_Acid_Tank_Supply_Valve == true && CIP_21_Acid_Tank_Return_Valve == 0 && CIP_21_Step == 1
+Acid Addition/Heat to Temp,CIP_21_Acid_Tank_Supply_Valve == true && CIP_21_Acid_Tank_Return_Valve == true && CIP_21_Return_Temperature > 120 || CIP_21_Acid_Tank_Supply_Valve == false && CIP_21_Acid_Tank_Return_Valve == false
+Acid Circulation,CIP_21_Acid_Tank_Supply_Valve == true && CIP_21_Acid_Tank_Return_Valve == true && CIP_21_Return_Temperature > 120
+Acid Circulation,CIP_21_Acid_Tank_Return_Valve == true && CIP_21_Rinse_Tank_Supply_Valve == true || CIP_21_Step != 3 && CIP_21_Step != 1
+Acid Recovery,CIP_21_Acid_Tank_Return_Valve == true && CIP_21_Rinse_Tank_Supply_Valve == true
+Acid Recovery,CIP_21_Acid_Tank_Return_Valve == false
+Caustic Addition/Heat to Temp,CIP_21_Caustic_Tank_Supply_Valve == true && CIP_21_Caustic_Tank_Return_Valve == 0 && CIP_21_Step == 7
+Caustic Addition/Heat to Temp,CIP_21_Caustic_Tank_Supply_Valve == true && CIP_21_Caustic_Tank_Return_Valve == true && CIP_21_Return_Temperature > 140
+Caustic Circulation,CIP_21_Caustic_Tank_Supply_Valve == true && CIP_21_Caustic_Tank_Return_Valve == true && CIP_21_Return_Temperature > 140
+Caustic Circulation,CIP_21_Caustic_Tank_Return_Valve == true && CIP_21_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_21_Caustic_Tank_Return_Valve == true && CIP_21_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_21_Caustic_Tank_Return_Valve == false
+Fresh Water Rinse,CIP_21_Rinse_Tank_Supply_Valve == true && CIP_21_Caustic_Tank_Return_Valve == false && CIP_21_Acid_Tank_Return_Valve == false && CIP_22_Sanitizer_Pump == 0 && CIP_21_Step < 7 || CIP_21_Step == 9 || CIP_21_Step == 13 || CIP_21_Step > 14
+Fresh Water Rinse,CIP_21_Step >= 7 && CIP_21_Step <= 14 && CIP_21_Step != 9 && CIP_21_Step != 13
+Sanitize Circulation,CIP_22_Sanitizer_Pump == true
+Sanitize Circulation,CIP_22_Sanitizer_Pump != true
+Sanitize Water,CIP_22_Sanitizer_Pump == true
+Sanitize Water,CIP_22_Sanitizer_Pump != true
+Acid Addition/Heat to Temp,CIP_23_Acid_Tank_Supply_Valve == true && CIP_23_Acid_Tank_Return_Valve == 0 && CIP_23_Step == 1
+Acid Addition/Heat to Temp,CIP_23_Acid_Tank_Supply_Valve == true && CIP_23_Acid_Tank_Return_Valve == true && CIP_23_Return_Temperature > 120 || CIP_23_Acid_Tank_Supply_Valve == false && CIP_23_Acid_Tank_Return_Valve == false
+Acid Circulation,CIP_23_Acid_Tank_Supply_Valve == true && CIP_23_Acid_Tank_Return_Valve == true && CIP_23_Return_Temperature > 120
+Acid Circulation,CIP_23_Acid_Tank_Return_Valve == true && CIP_23_Rinse_Tank_Supply_Valve == true || CIP_23_Step != 3 && CIP_23_Step != 1
+Acid Recovery,CIP_23_Acid_Tank_Return_Valve == true && CIP_23_Rinse_Tank_Supply_Valve == true
+Acid Recovery,CIP_23_Acid_Tank_Return_Valve == false
+Caustic Addition/Heat to Temp,CIP_23_Caustic_Tank_Supply_Valve == true && CIP_23_Caustic_Tank_Return_Valve == 0 && CIP_23_Step == 7
+Caustic Addition/Heat to Temp,CIP_23_Caustic_Tank_Supply_Valve == true && CIP_23_Caustic_Tank_Return_Valve == true && CIP_23_Return_Temperature > 140
+Caustic Circulation,CIP_23_Caustic_Tank_Supply_Valve == true && CIP_23_Caustic_Tank_Return_Valve == true && CIP_23_Return_Temperature > 140
+Caustic Circulation,CIP_23_Caustic_Tank_Supply_Valve == true && CIP_23_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_23_Caustic_Tank_Return_Valve == true && CIP_23_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_23_Caustic_Tank_Return_Valve == false
+Fresh Water Rinse,CIP_23_Rinse_Tank_Supply_Valve == true && CIP_23_Caustic_Tank_Return_Valve == false && CIP_23_Acid_Tank_Return_Valve == false && CIP_23_Sanitizer_Pump == 0 && CIP_23_Step < 7 || CIP_23_Step == 9 || CIP_23_Step == 13 || CIP_23_Step > 14
+Fresh Water Rinse,CIP_23_Step >= 7 && CIP_23_Step <= 14 && CIP_23_Step != 9 && CIP_23_Step != 13
+Sanitize Circulation,CIP_23_Sanitizer_Pump == true
+Sanitize Circulation,CIP_23_Sanitizer_Pump != true
+Sanitize Water,CIP_23_Sanitizer_Pump == true
+Sanitize Water,CIP_23_Sanitizer_Pump != true
+Acid Addition/Heat to Temp,CIP_22_Acid_Tank_Supply_Valve == true && CIP_22_Acid_Tank_Return_Valve == 0 && CIP_22_Step == 1
+Acid Addition/Heat to Temp,CIP_22_Acid_Tank_Supply_Valve == true && CIP_22_Acid_Tank_Return_Valve == true && CIP_22_Return_Temperature > 120 || CIP_22_Acid_Tank_Supply_Valve == false && CIP_22_Acid_Tank_Return_Valve == false
+Acid Circulation,CIP_22_Acid_Tank_Supply_Valve == true && CIP_22_Acid_Tank_Return_Valve == true && CIP_22_Return_Temperature > 120
+Acid Circulation,CIP_22_Acid_Tank_Return_Valve == true && CIP_22_Rinse_Tank_Supply_Valve == true || CIP_22_Step != 3 && CIP_22_Step != 1
+Acid Recovery,CIP_22_Acid_Tank_Return_Valve == true && CIP_22_Rinse_Tank_Supply_Valve == true
+Acid Recovery,CIP_22_Acid_Tank_Return_Valve == false
+Caustic Addition/Heat to Temp,CIP_22_Caustic_Tank_Supply_Valve == true && CIP_22_Caustic_Tank_Return_Valve == 0 && CIP_22_Step == 7
+Caustic Addition/Heat to Temp,CIP_22_Caustic_Tank_Supply_Valve == true && CIP_22_Caustic_Tank_Return_Valve == true && CIP_22_Return_Temperature > 140
+Caustic Circulation,CIP_22_Caustic_Tank_Supply_Valve == true && CIP_22_Caustic_Tank_Return_Valve == true && CIP_22_Return_Temperature > 140
+Caustic Circulation,CIP_22_Caustic_Tank_Return_Valve == true && CIP_22_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_22_Caustic_Tank_Return_Valve == true && CIP_22_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_22_Caustic_Tank_Return_Valve == false
+Fresh Water Rinse,CIP_22_Rinse_Tank_Supply_Valve == true && CIP_22_Acid_Tank_Return_Valve == false && CIP_22_Caustic_Tank_Return_Valve == false && CIP_22_Sanitizer_Pump == 0 && CIP_22_Step < 7 || CIP_22_Step == 9 || CIP_22_Step == 13 || CIP_22_Step > 14
+Fresh Water Rinse,CIP_22_Step >= 7 && CIP_22_Step <= 14 && CIP_22_Step != 9 && CIP_22_Step != 13
+Sanitize Circulation,CIP_22_Sanitizer_Pump == true
+Sanitize Circulation,CIP_22_Sanitizer_Pump != true
+Sanitize Water,CIP_22_Sanitizer_Pump == true
+Sanitize Water,CIP_22_Sanitizer_Pump != true
+Acid Addition/Heat to Temp,CIP_24_Acid_Tank_Supply_Valve == true && CIP_24_Acid_Tank_Return_Valve == false
+Acid Addition/Heat to Temp,CIP_24_Acid_Tank_Supply_Valve == true && CIP_24_Acid_Tank_Return_Valve == true && CIP_24_Return_Temperature > 120 || CIP_24_Acid_Tank_Supply_Valve == false && CIP_24_Acid_Tank_Return_Valve == false
+Acid Circulation,CIP_24_Acid_Tank_Supply_Valve == true && CIP_24_Acid_Tank_Return_Valve == true && CIP_24_Return_Temperature > 120
+Acid Circulation,CIP_24_Acid_Tank_Return_Valve == true && CIP_24_Rinse_Tank_Supply_Valve == true || CIP_24_Step != 3 && CIP_24_Step != 1
+Acid Recovery,CIP_24_Acid_Tank_Return_Valve == true && CIP_24_Rinse_Tank_Supply_Valve == true
+Acid Recovery,CIP_24_Acid_Tank_Return_Valve == false
+Caustic Addition/Heat to Temp,CIP_24_Caustic_Tank_Supply_Valve == true && CIP_24_Caustic_Tank_Return_Valve == false
+Caustic Addition/Heat to Temp,CIP_24_Caustic_Tank_Supply_Valve == true && CIP_24_Caustic_Tank_Return_Valve == true && CIP_24_Return_Temperature > 140
+Caustic Circulation,CIP_24_Caustic_Tank_Supply_Valve == true && CIP_24_Caustic_Tank_Return_Valve == true && CIP_24_Return_Temperature > 140
+Caustic Circulation,CIP_24_Caustic_Tank_Return_Valve == true && CIP_24_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_24_Caustic_Tank_Return_Valve == true && CIP_24_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_24_Caustic_Tank_Return_Valve == false
+Fresh Water Rinse,CIP_24_Rinse_Tank_Supply_Valve == true && CIP_24_Acid_Tank_Return_Valve == false && CIP_24_Caustic_Tank_Return_Valve == false && CIP_24_Sanitizer_Pump == 0 && CIP_24_Step < 7 || CIP_24_Step == 9 || CIP_24_Step == 13 || CIP_24_Step > 14
+Fresh Water Rinse,CIP_24_Step >= 7 && CIP_24_Step <= 14 && CIP_24_Step != 9 && CIP_24_Step != 13
+Sanitize Circulation,CIP_24_Sanitizer_Pump == true
+Sanitize Circulation,CIP_24_Sanitizer_Pump != true
+Sanitize Water,CIP_24_Sanitizer_Pump == true
+Sanitize Water,CIP_24_Sanitizer_Pump != true
+Caustic Addition/Heat to Temp,CIP_25_Caustic_Tank_Supply_Valve == true && CIP_25_Caustic_Tank_Return_Valve == false
+Caustic Addition/Heat to Temp,CIP_25_Caustic_Tank_Supply_Valve == true && CIP_25_Caustic_Tank_Return_Valve == true && CIP_25_Return_Temperature > 140
+Caustic Circulation,CIP_25_Caustic_Tank_Supply_Valve == true && CIP_25_Caustic_Tank_Return_Valve == true && CIP_25_Return_Temperature > 140
+Caustic Circulation,CIP_25_Caustic_Tank_Return_Valve == true && CIP_25_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_25_Caustic_Tank_Return_Valve == true && CIP_25_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_25_Caustic_Tank_Return_Valve == false
+Fresh Water Rinse,CIP_25_Rinse_Tank_Supply_Valve == true && CIP_25_Caustic_Tank_Return_Valve == false
+Fresh Water Rinse,CIP_25_Rinse_Tank_Supply_Valve != true && CIP_25_Caustic_Tank_Return_Valve != false
+Acid Addition/Heat to Temp,CIP_26_Acid_Tank_Supply_Valve == true && CIP_26_Acid_Tank_Return_Valve == 0 && CIP_26_Step == 1
+Acid Addition/Heat to Temp,CIP_26_Acid_Tank_Supply_Valve == true && CIP_26_Acid_Tank_Return_Valve == true && CIP_26_Return_Temperature > 120
+Acid Circulation,CIP_26_Acid_Tank_Supply_Valve == true && CIP_26_Acid_Tank_Return_Valve == true && CIP_26_Return_Temperature > 120
+Acid Circulation,CIP_26_Acid_Tank_Return_Valve == true && CIP_26_Rinse_Tank_Supply_Valve == true || CIP_26_Step != 14
+Acid Recovery,CIP_26_Acid_Tank_Return_Valve == true && CIP_26_Rinse_Tank_Supply_Valve == true && CIP_26_Caustic_Tank_Supply_Valve == false
+Acid Recovery,CIP_26_Acid_Tank_Return_Valve == false
+Caustic Addition/Heat to Temp,CIP_26_Caustic_Tank_Supply_Valve == true && CIP_26_Caustic_Tank_Return_Valve == 0 && CIP_26_Step == 10
+Caustic Addition/Heat to Temp,CIP_26_Caustic_Tank_Supply_Valve == true && CIP_26_Caustic_Tank_Return_Valve == true && CIP_26_Return_Temperature > 140
+Caustic Circulation,CIP_26_Caustic_Tank_Supply_Valve == true && CIP_26_Caustic_Tank_Return_Valve == true && CIP_26_Return_Temperature > 140
+Caustic Circulation,CIP_26_Caustic_Tank_Return_Valve == true && CIP_26_Rinse_Tank_Supply_Valve == true
+Caustic Recovery,CIP_26_Caustic_Tank_Return_Valve == true && CIP_26_Rinse_Tank_Supply_Valve == true && CIP_26_Acid_Tank_Return_Valve == false && CIP_26_Acid_Tank_Supply_Valve == false
+Caustic Recovery,CIP_26_Caustic_Tank_Return_Valve == false
+Fresh Water Rinse,CIP_26_Rinse_Tank_Supply_Valve == true && CIP_26_Acid_Tank_Return_Valve == false && CIP_26_Caustic_Tank_Return_Valve == false && CIP_26_Sanitizer_Pump == 0 && CIP_26_Step < 7 || CIP_26_Step == 9 || CIP_26_Step == 13 || CIP_26_Step > 14
+Fresh Water Rinse,CIP_26_Step >= 7 && CIP_26_Step <= 14 && CIP_26_Step != 9 && CIP_26_Step != 13
+Sanitize Circulation,CIP_26_Sanitizer_Pump == true
+Sanitize Circulation,CIP_26_Sanitizer_Pump != true
+Sanitize Water,CIP_26_Sanitizer_Pump == true
+Sanitize Water,CIP_26_Sanitizer_Pump != true
+Drain,CIP_27_Step_No == 12
+Drain,CIP_27_Step_No != 12
+Dryer Stack Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 4
+Dryer Stack Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 4
+Dryer Stack Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 4
+Dryer Stack Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 4
+Dryer Stack Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 4 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Dryer Stack Rinse,CIP_27_Object_ID != 4 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Drying Chamber Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 8 || CIP_27_Object_ID == 16384
+Drying Chamber Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 8 && CIP_27_Object_ID != 16384
+Drying Chamber Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 8 || CIP_27_Object_ID == 16384
+Drying Chamber Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 8 && CIP_27_Object_ID != 16384
+Drying Chamber Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == 0 && CIP_27_Object_ID == 8 || CIP_27_Object_ID == 16384 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Drying Chamber Rinse,CIP_27_Object_ID != 8 && CIP_27_Object_ID != 16384 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Entire System Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 16
+Entire System Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 16
+Entire System Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 16
+Entire System Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 16
+Entire System Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 16 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Entire System Rinse,CIP_27_Object_ID != 16 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Production Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 2
+Production Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 2
+Production Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 2
+Production Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 2
+Production Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 2 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Production Rinse,CIP_27_Object_ID != 2 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 1 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Return_Temp >= 145 && CIP_27_Step_No == 10 && CIP_27_Object_ID == 32
+Section 1 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 32
+Section 1 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Return_Temp >= 145 && CIP_27_Step_No == 7 && CIP_27_Object_ID == 32
+Section 1 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 32
+Section 1 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Caustic_Supply_Valve == false && CIP_27_Acid_Supply_Valve == false && CIP_27_Object_ID == 32 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 1 Rinse,CIP_27_Step_No != 2 && CIP_27_Step_No != 8 || CIP_27_Object_ID != 32
+Section 2 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 64
+Section 2 Acid Circulation,CIP_27_Object_ID != 64 || CIP_27_Step_No != 10
+Section 2 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 64
+Section 2 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 64
+Section 2 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 64 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 2 Rinse,CIP_27_Object_ID != 64 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 3 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 128
+Section 3 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Step_No != 128
+Section 3 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 128
+Section 3 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 128
+Section 3 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 128 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 3 Rinse,CIP_27_Object_ID != 128 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 4 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 256
+Section 4 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 256
+Section 4 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 256
+Section 4 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 256
+Section 4 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 256 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 4 Rinse,CIP_27_Object_ID != 256 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 5 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 512
+Section 5 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 512
+Section 5 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 512
+Section 5 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 512
+Section 5 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 512 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 5 Rinse,CIP_27_Object_ID != 512 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 6 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Object_ID == 1024 && CIP_27_Step_No == 10
+Section 6 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 1024
+Section 6 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 1024
+Section 6 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 1024
+Section 6 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 1024 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 6 Rinse,CIP_27_Object_ID != 1024 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 7 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 2048
+Section 7 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 2048
+Section 7 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 2048
+Section 7 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 2048
+Section 7 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 2048 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 7 Rinse,CIP_27_Object_ID != 2048 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 8 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 4096
+Section 8 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 4096
+Section 8 Caustic Circulation,CIP_27_Caustic_Supply_Valve == true && CIP_27_Step_No == 7 && CIP_27_Object_ID == 4096
+Section 8 Caustic Circulation,CIP_27_Step_No != 7 || CIP_27_Object_ID != 4096
+Section 8 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 4096 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 8 Rinse,CIP_27_Object_ID != 4096 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Section 9 Acid Circulation,CIP_27_Acid_Supply_Valve == true && CIP_27_Step_No == 10 && CIP_27_Object_ID == 8192
+Section 9 Acid Circulation,CIP_27_Step_No != 10 || CIP_27_Object_ID != 8192
+Section 9 Rinse,CIP_27_Fresh_Water_Supply_Valve == true && CIP_27_Acid_Supply_Valve == false && CIP_27_Caustic_Supply_Valve == false && CIP_27_Object_ID == 8192 && CIP_27_Step_No == 2 || CIP_27_Step_No == 8
+Section 9 Rinse,CIP_27_Object_ID != 8192 || CIP_27_Step_No != 2 && CIP_27_Step_No != 8
+Acid Addition,CIP_28_Acid_Supply_Valve == true && CIP_28_Step_No == 11 || CIP_28_Step_No == 3
+Acid Addition,CIP_28_Step_No != 11 && CIP_28_Step_No != 3
+Acid Circulation,CIP_28_Acid_Supply_Valve == true && CIP_28_Step_No == 12 && CIP_28_Step_No >= 12 && CIP_28_Step_No <= 13
+Acid Circulation,CIP_28_Step_No < 12 || CIP_28_Step_No > 13
+Caustic Addition,CIP_28_Caustic_Supply_Valve == true && CIP_28_Step_No == 2 && CIP_28_Step_No == 6
+Caustic Addition,CIP_28_Step_No != 2 && CIP_28_Step_No != 6
+Caustic Circulation,CIP_28_Caustic_Supply_Valve == true && CIP_28_Step_No == 7 && CIP_28_Step_No >= 7 && CIP_28_Step_No <= 8
+Caustic Circulation,CIP_28_Step_No < 7 || CIP_28_Step_No > 8
+Drain,CIP_28_Step_No >= 14
+Drain,CIP_28_Step_No <= 14
+Pre Rinse,CIP_28_Fresh_Water_Supply_Valve == true || CIP_28_Recovered_Water_Supply_Valve == true && CIP_28_Step_No >= 4 && CIP_28_Step_No <= 5
+Pre Rinse,CIP_28_Step_No < 4 || CIP_28_Step_No > 5
+Rinse,CIP_28_Recovered_Water_Supply_Valve == true || CIP_28_Fresh_Water_Supply_Valve == true && CIP_28_Step_No >= 9 && CIP_28_Step_No <= 10
+Rinse,CIP_28_Step_No < 9 || CIP_28_Step_No > 10
+Acid Charge,CIP_29_Step == 8
+Acid Charge,CIP_29_Step != 8
+Acid Circulation,CIP_29_Step == 9
+Acid Circulation,CIP_29_Step != 9
+Acid Drain,CIP_29_Step == 10
+Acid Drain,CIP_29_Step != 10
+Caustic Charge,CIP_29_Step == 3
+Caustic Charge,CIP_29_Step != 3
+Caustic Circulation,CIP_29_Step == 4
+Caustic Circulation,CIP_29_Step != 4
+Caustic Drain,CIP_29_Step == 5
+Caustic Drain,CIP_29_Step != 5
+Caustic Rinse,CIP_29_Step >= 6 && CIP_29_Step <= 7
+Caustic Rinse,CIP_29_Step <= 6 && CIP_29_Step >= 7
+Fresh Water Rinse,CIP_29_Step >= 11 && CIP_29_Step <= 12 || CIP_29_Step == 15
+Fresh Water Rinse,CIP_29_Step <= 11 && CIP_29_Step >= 12 || CIP_29_Step != 15
+Pre Rinse,CIP_29_Step >= 1 && CIP_29_Step <= 2
+Pre Rinse,CIP_29_Step <= 1 && CIP_29_Step >= 2
+Sanitize,CIP_29_Step >= 13 && CIP_29_Step <= 14
+Sanitize,CIP_29_Step <= 13 && CIP_29_Step >= 14
+Caustic Circulation,CIP_30_Caustic_Supply_Valve == true && CIP_30_Caustic_Return_Valve == true && CIP_30_Supply_Temp >= 145
+Caustic Circulation,CIP_30_Caustic_Supply_Valve == false
+Caustic Heat to Temp,CIP_30_Caustic_Supply_Valve == true && CIP_30_Caustic_Return_Valve == true && CIP_30_Supply_Temp < 125
+Caustic Heat to Temp,CIP_30_Caustic_Supply_Valve == false || CIP_30_Supply_Temp >= 145
+Fresh Water Rinse,CIP_30_Fresh_Water_Supply_Valve == true && CIP_30_Caustic_Return_Valve == false
+Fresh Water Rinse,CIP_30_Fresh_Water_Supply_Valve != true && CIP_30_Caustic_Return_Valve != false
+Recovered Water Rinse,CIP_30_Recovered_Water_Supply_Valve == true && CIP_30_Recovered_Water_Return_Valve == true
+Recovered Water Rinse,CIP_30_Recovered_Water_Supply_Valve != true && CIP_30_Recovered_Water_Return_Valve != true
+Acid Circulation,CIP_31_Acid_Supply_Valve == true && CIP_31_Supply_Temp >= 145
+Acid Circulation,CIP_31_Acid_Supply_Valve == false || CIP_31_Supply_Temp < 125
+Acid Heat to Temp,CIP_31_Acid_Supply_Valve == true && CIP_31_Supply_Temp < 125
+Acid Heat to Temp,CIP_31_Acid_Supply_Valve == false || CIP_31_Supply_Temp >= 145
+Caustic Circulation,CIP_31_Caustic_Supply_Valve == true && CIP_31_Caustic_Return_Valve == true && CIP_31_Supply_Temp >= 145
+Caustic Circulation,CIP_31_Caustic_Supply_Valve == false || CIP_31_Supply_Temp <= 125
+Caustic Heat to Temp,CIP_31_Caustic_Supply_Valve == true && CIP_31_Caustic_Return_Valve == true && CIP_31_Supply_Temp < 125
+Caustic Heat to Temp,CIP_31_Caustic_Supply_Valve == false || CIP_31_Supply_Temp >= 145
+Fresh Water Rinse,CIP_31_Fresh_Water_Valve == true && CIP_31_Drain_Valve == true
+Fresh Water Rinse,CIP_31_Fresh_Water_Valve != true && CIP_31_Drain_Valve != true
+Acid Circulation,CIP_32_Acid_Supply_Valve == true && CIP_32_Supply_Temp >= 145 && CIP_32_Step == 4
+Acid Circulation,CIP_32_Step != 4
+Acid Heat to Temp,CIP_32_Acid_Supply_Valve == true && CIP_32_Supply_Temp < 125 && CIP_32_Step == 4
+Acid Heat to Temp,CIP_32_Step != 4 || CIP_32_Supply_Temp >= 145
+Caustic Circulation,CIP_32_Caustic_Supply_Valve == true && CIP_32_Supply_Temp >= 145 && CIP_32_Step == 2
+Caustic Circulation,CIP_32_Step != 2
+Caustic Heat to Temp,CIP_32_Caustic_Supply_Valve == true && CIP_32_Supply_Temp < 125 && CIP_32_Step == 2
+Caustic Heat to Temp,CIP_32_Step != 2 || CIP_32_Supply_Temp >= 145
+Fresh Water Rinse,CIP_32_Step == 5 || CIP_32_Step == 3 && CIP_32_Fresh_Water_Supply_Valve == true
+Fresh Water Rinse,CIP_32_Step != 5 && CIP_32_Step != 3
+Recovered Water Rinse,CIP_32_Step == 1 || CIP_32_Step == 3 && CIP_32_Fresh_Water_Supply_Valve == false
+Recovered Water Rinse,CIP_32_Step != 1 && CIP_32_Step != 3 || CIP_32_Fresh_Water_Supply_Valve == false
+Chemical 1 Addition and Heat to Temperature,CIP_39_Recipe == 2 && CIP_39_Step >= 13 && CIP_39_Step <= 15 || CIP_39_Recipe == 3 && CIP_39_Step >= 13 && CIP_39_Step <= 15
+Chemical 1 Addition and Heat to Temperature,CIP_39_Step > 15
+Chemical 1 Circulation,CIP_39_Recipe == 2 && CIP_39_Step == 16 && CIP_39_Step_Timer_Timing == 1 || CIP_39_Recipe == 3 && CIP_39_Step == 16
+Chemical 1 Circulation,CIP_39_Step != 16
+Chemical 2 Addition and Heat to Temperature,CIP_39_Recipe == 2 && CIP_39_Step >= 33 && CIP_39_Step <= 35
+Chemical 2 Addition and Heat to Temperature,CIP_39_Step == 36 && CIP_39_Step_Timer_Timing == true
+Chemical 2 Circulation,CIP_39_Recipe == 2 && CIP_39_Step == 36 && CIP_39_Step_Timer_Timing == true
+Chemical 2 Circulation,CIP_39_Step != 36
+Chemical 3 Addition and Heat to Temperature,CIP_39_Recipe == 2 && CIP_39_Step >= 53 && CIP_39_Step <= 55
+Chemical 3 Addition and Heat to Temperature,CIP_39_Step == 56 && CIP_39_Step_Timer_Timing == true
+Chemical 3 Circulation,CIP_39_Recipe == 2 && CIP_39_Step == 56 && CIP_39_Step_Timer_Timing == true
+Chemical 3 Circulation,CIP_39_Step != 56
+Chemical 4 Addition and Heat to Temperature,CIP_39_Recipe == 2 && CIP_39_Step >= 73 && CIP_39_Step <= 75
+Chemical 4 Addition and Heat to Temperature,CIP_39_Step == 76 && CIP_39_Step_Timer_Timing == true
+Chemical 4 Circulation,CIP_39_Recipe == 2 && CIP_39_Step == 76 && CIP_39_Step_Timer_Timing == true
+Chemical 4 Circulation,CIP_39_Step != 76
+Flux Test,CIP_39_Recipe == 2 && CIP_39_Step >= 90 && CIP_39_Step <= 94
+Flux Test,CIP_39_Recipe != 2 && CIP_39_Step <= 90 && CIP_39_Step >= 94
+Fresh Water Rinse to Drain,CIP_39_Recipe == 2 && CIP_39_Step >= 2 && CIP_39_Step <= 8 || CIP_39_Recipe == 2 && CIP_39_Step >= 22 && CIP_39_Step <= 28 || CIP_39_Recipe == 2 && CIP_39_Step >= 42 && CIP_39_Step <= 48 || CIP_39_Recipe == 2 && CIP_39_Step >= 62 && CIP_39_Step <= 68 || CIP_39_Recipe == 2 && CIP_39_Step >= 82 && CIP_39_Step <= 88 || CIP_39_Recipe == 3 && CIP_39_Step >= 2 && CIP_39_Step <= 8 || CIP_39_Recipe == 3 && CIP_39_Step >= 22 && CIP_39_Step <= 28 || CIP_39_Recipe == 4 && CIP_39_Step >= 12 && CIP_39_Step <= 18 || CIP_39_Recipe == 5 && CIP_39_Step >= 2 && CIP_39_Step <= 8 || CIP_39_Recipe == 6 && CIP_39_Step >= 12 && CIP_39_Step <= 18
+Fresh Water Rinse to Drain,CIP_39_Recipe != 2 && CIP_39_Step <= 2 && CIP_39_Step >= 8 || CIP_39_Recipe != 2 && CIP_39_Step <= 22 && CIP_39_Step >= 28 || CIP_39_Recipe != 2 && CIP_39_Step <= 42 && CIP_39_Step >= 48 || CIP_39_Recipe != 2 && CIP_39_Step <= 62 && CIP_39_Step >= 68 || CIP_39_Recipe != 2 && CIP_39_Step <= 82 && CIP_39_Step >= 88 || CIP_39_Recipe != 3 && CIP_39_Step <= 2 && CIP_39_Step >= 8 || CIP_39_Recipe != 3 && CIP_39_Step <= 22 && CIP_39_Step >= 28 || CIP_39_Recipe != 4 && CIP_39_Step <= 12 && CIP_39_Step >= 18 || CIP_39_Recipe != 5 && CIP_39_Step <= 2 && CIP_39_Step >= 8 || CIP_39_Recipe != 6 && CIP_39_Step <= 12 && CIP_39_Step >= 18
+Sanitize Circulation,CIP_39_Recipe == 6 && CIP_39_Step == 6
+Sanitize Circulation,CIP_39_Step != 6
+Sanitizer Addition,CIP_39_Recipe == 6 && CIP_39_Step >= 4 && CIP_39_Step <= 5
+Sanitizer Addition,CIP_39_Step == 6
+Soak Addition,CIP_39_Recipe == 4 && CIP_39_Step >= 4 && CIP_39_Step <= 5
+Soak Addition,CIP_39_Step == 6
+Soak Circulation,CIP_39_Recipe == 4 && CIP_39_Step == 6 && CIP_39_Step_Timer_Timing == true
+Soak Circulation,CIP_39_Step != 6
+Acid Addition and Heat to Temperature,CIP_40_Recipe == 2 && CIP_40_Step >= 81 && CIP_40_Step <= 83
+Acid Addition and Heat to Temperature,CIP_40_Step == 84 && CIP_40_Step_Timer_Timing == 1 || CIP_40_Step > 84
+Acid Circulation,CIP_40_Recipe == 2 && CIP_40_Step == 84 && CIP_40_Step_Timer_Timing == true
+Acid Circulation,CIP_40_Step != 84
+Alkaline Addition and Heat to Temperature,CIP_40_Recipe == 2 && CIP_40_Step >= 103 && CIP_40_Step <= 105 || CIP_40_Recipe == 2 && CIP_40_Step >= 37 && CIP_40_Step <= 39
+Alkaline Addition and Heat to Temperature,CIP_40_Step >= 40 && CIP_40_Step < 103 || CIP_40_Step >= 106
+Alkaline Circulation,CIP_40_Recipe == 2 && CIP_40_Step == 106 && CIP_40_Step_Timer_Timing == 1 || CIP_40_Recipe == 2 && CIP_40_Step == 40 && CIP_40_Step_Timer_Timing == true
+Alkaline Circulation,CIP_40_Step != 40 && CIP_40_Step != 106
+Alkaline Junk Wash Addition and Heat to Temp,CIP_40_Recipe == 2 && CIP_40_Step >= 15 && CIP_40_Step <= 17
+Alkaline Junk Wash Addition and Heat to Temp,CIP_40_Step >= 18
+Alkaline Junk Wash Circulation,CIP_40_Recipe == 2 && CIP_40_Step == 18 && CIP_40_Step_Timer_Timing == true
+Alkaline Junk Wash Circulation,CIP_40_Step != 18
+Anti Microbial Addition,CIP_40_Recipe == 6 && CIP_40_Step >= 4 && CIP_40_Step <= 5
+Anti Microbial Addition,CIP_40_Step == 6
+Anti Microbial Circulation,CIP_40_Recipe == 6 && CIP_40_Step == 6
+Anti Microbial Circulation,CIP_40_Step != 6
+Enzyme Addition and Heat to Temperature,CIP_40_Recipe == 2 && CIP_40_Step >= 59 && CIP_40_Step <= 61 || CIP_40_Recipe == 3 && CIP_40_Step >= 15 && CIP_40_Step <= 17
+Enzyme Addition and Heat to Temperature,CIP_40_Step >= 62 && CIP_40_Recipe == 2 || CIP_40_Step > 17 && CIP_40_Recipe == 3
+Enzyme Circulation,CIP_40_Recipe == 2 && CIP_40_Step == 62 && CIP_40_Step_Timer_Timing == 1 || CIP_40_Recipe == 3 && CIP_40_Step == 18 && CIP_40_Step_Timer_Timing == true
+Enzyme Circulation,CIP_40_Step != 62 && CIP_40_Step != 18
+Fresh Water Rinse to Drain,CIP_40_Recipe == 2 && CIP_40_Step >= 2 && CIP_40_Step <= 10 || CIP_40_Recipe == 2 && CIP_40_Step >= 24 && CIP_40_Step <= 32 || CIP_40_Recipe == 2 && CIP_40_Step >= 46 && CIP_40_Step <= 54 || CIP_40_Recipe == 2 && CIP_40_Step >= 68 && CIP_40_Step <= 76 || CIP_40_Recipe == 2 && CIP_40_Step >= 90 && CIP_40_Step <= 98 || CIP_40_Recipe == 3 && CIP_40_Step >= 2 && CIP_40_Step <= 10 || CIP_40_Recipe == 3 && CIP_40_Step >= 24 && CIP_40_Step <= 32 || CIP_40_Recipe == 4 && CIP_40_Step >= 12 && CIP_40_Step <= 20 || CIP_40_Recipe == 5 && CIP_40_Step >= 2 && CIP_40_Step <= 10 || CIP_40_Recipe == 6 && CIP_40_Step >= 12 && CIP_40_Step <= 20 || CIP_40_Recipe == 2 && CIP_40_Step >= 112 && CIP_40_Step <= 120
+Fresh Water Rinse to Drain,CIP_40_Recipe != 2 && CIP_40_Step <= 2 && CIP_40_Step >= 10 || CIP_40_Recipe != 2 && CIP_40_Step <= 24 && CIP_40_Step >= 32 || CIP_40_Recipe != 2 && CIP_40_Step <= 46 && CIP_40_Step >= 54 || CIP_40_Recipe != 2 && CIP_40_Step <= 68 && CIP_40_Step >= 76 || CIP_40_Recipe != 2 && CIP_40_Step <= 90 && CIP_40_Step >= 98 || CIP_40_Recipe != 3 && CIP_40_Step <= 2 && CIP_40_Step >= 10 || CIP_40_Recipe != 3 && CIP_40_Step <= 24 && CIP_40_Step >= 32 || CIP_40_Recipe != 4 && CIP_40_Step <= 12 && CIP_40_Step >= 20 || CIP_40_Recipe != 5 && CIP_40_Step <= 2 && CIP_40_Step >= 10 || CIP_40_Recipe != 6 && CIP_40_Step <= 12 && CIP_40_Step >= 20 || CIP_40_Recipe != 2 && CIP_40_Step <= 112 && CIP_40_Step >= 120
+Soak Addition,CIP_40_Recipe == 4 && CIP_40_Step >= 4 && CIP_40_Step <= 5
+Soak Addition,CIP_40_Step == 6
+Soak Circulation,CIP_40_Recipe == 4 && CIP_40_Step == 6
+Soak Circulation,CIP_40_Step != 6
+Acid Circulation,CIP_33_Step == 6
+Acid Circulation,CIP_33_Step != 6
+Caustic Circulation,CIP_33_Step == 4
+Caustic Circulation,CIP_33_Step != 4
+Fresh Water Rinse,CIP_33_Step >= 1 && CIP_33_Step != 4 && CIP_33_Step != 6
+Fresh Water Rinse,CIP_33_Step <= 1 && CIP_33_Step == 4 && CIP_33_Step == 6
+Acid Circulation,CIP_34_Step == 11
+Acid Circulation,CIP_34_Step != 11
+Caustic Circulation,CIP_34_Step == 7
+Caustic Circulation,CIP_34_Step != 7
+Fresh Water Rinse,CIP_34_Acid_Supply_Valve == false && CIP_34_Caustic_Supply_Valve == false && CIP_34_Drain_Valve == true
+Fresh Water Rinse,CIP_34_Drain_Valve != false
+Acid Circulation,CIP_35_Acid_Supply_Valve == true && CIP_35_Step == 6
+Acid Circulation,CIP_35_Step != 6
+Caustic Circulation,CIP_35_Caustic_Supply_Valve == true && CIP_35_Step == 4
+Caustic Circulation,CIP_35_Step != 4
+Caustic Heat to Temp,CIP_35_Step == 3
+Caustic Heat to Temp,CIP_35_Step != 3
+Fresh Water Rinse,CIP_35_Fresh_Water_Supply_Valve == true && CIP_35_Drain_Valve == true && CIP_35_Step != 3
+Fresh Water Rinse,CIP_35_Drain_Valve == false || CIP_35_Step == 3
+Acid Circulation,CIP_36_Acid_Supply_Valve == true && CIP_36_Step == 6
+Acid Circulation,CIP_36_Step != 6
+Caustic Circulation,CIP_36_Caustic_Supply_Valve == true && CIP_36_Step == 4
+Caustic Circulation,CIP_36_Step != 4
+Caustic Heat to Temp,CIP_36_Step == 2
+Caustic Heat to Temp,CIP_36_Step != 2
+Fresh Water Rinse,CIP_36_Fresh_Water_Supply_Valve == true && CIP_36_Drain_Valve == true
+Fresh Water Rinse,CIP_36_Drain_Valve == false || CIP_36_Step == 2
+Chemical 1 Addition and Heat To Temperature,CIP_41_Step == 3 && CIP_41_Wash_Temperature_Hold == true
+Chemical 1 Addition and Heat To Temperature,CIP_41_Step != 3 && CIP_41_Wash_Temperature_Hold != true
+Chemical 1 Circulation,CIP_41_Step == 3 && CIP_41_Wash_Temperature_Hold == false && CIP_41_High_Pressure_Pump_A == true
+Chemical 1 Circulation,CIP_41_Step != 3
+Chemical 2 Addition and Heat to Temperature,CIP_41_Step == 6 && CIP_41_Wash_Temperature_Hold == true
+Chemical 2 Addition and Heat to Temperature,CIP_41_Step != 6 && CIP_41_Wash_Temperature_Hold != true
+Chemical 2 Circulation,CIP_41_Step == 6 && CIP_41_Wash_Temperature_Hold == false && CIP_41_High_Pressure_Pump_A == true
+Chemical 2 Circulation,CIP_41_Step != 6
+Chemical 3 Addition and Heat to Temperature,CIP_41_Step == 9 && CIP_41_Wash_Temperature_Hold == true
+Chemical 3 Addition and Heat to Temperature,CIP_41_Step != 9 && CIP_41_Wash_Temperature_Hold != true
+Chemical 3 Circulation,CIP_41_Step == 9 && CIP_41_Wash_Temperature_Hold == false && CIP_41_High_Pressure_Pump_A == true
+Chemical 3 Circulation,CIP_41_Step >= 13
+Fresh Water Rinse to Drain,CIP_41_Step >= 1 && CIP_41_Step <= 2 || CIP_41_Step >= 4 && CIP_41_Step <= 5 || CIP_41_Step >= 7 && CIP_41_Step <= 8 || CIP_41_Step >= 10 && CIP_41_Step <= 11 || CIP_41_Step >= 13 && CIP_41_Step <= 14 || CIP_41_Step >= 16 && CIP_41_Step <= 17
+Fresh Water Rinse to Drain,CIP_41_Step <= 1 && CIP_41_Step >= 2 || CIP_41_Step <= 4 && CIP_41_Step >= 5 || CIP_41_Step <= 7 && CIP_41_Step >= 8 || CIP_41_Step <= 10 && CIP_41_Step >= 11 || CIP_41_Step <= 13 && CIP_41_Step >= 14 || CIP_41_Step <= 16 && CIP_41_Step >= 17
+Chemical 1 Addition and Heat to Temperature,CIP_42_Recipe == 2 && CIP_42_Step >= 13 && CIP_42_Step <= 15
+Chemical 1 Addition and Heat to Temperature,CIP_42_Step == 16
+Chemical 1 Circulation,CIP_42_Recipe == 2 && CIP_42_Step == 16 && CIP_42_Step_Timer_Timing == true
+Chemical 1 Circulation,CIP_42_Step != 16
+Chemical 2 Addition and Heat to Temperature,CIP_42_Recipe == 2 && CIP_42_Step >= 33 && CIP_42_Step <= 35
+Chemical 2 Addition and Heat to Temperature,CIP_42_Step == 36
+Chemical 2 Circulation,CIP_42_Recipe == 2 && CIP_42_Step == 36
+Chemical 2 Circulation,CIP_42_Step != 36
+Chemical 3 Addition and Heat to Temperature,CIP_42_Recipe == 2 && CIP_42_Step >= 53 && CIP_42_Step <= 55
+Chemical 3 Addition and Heat to Temperature,CIP_42_Step == 56
+Chemical 3 Circulation,CIP_42_Recipe == 2 && CIP_42_Step == 56
+Chemical 3 Circulation,CIP_42_Step != 56
+Chemical 4 Addition and Heat to Temperature,CIP_42_Recipe == 2 && CIP_42_Step >= 73 && CIP_42_Step <= 75
+Chemical 4 Addition and Heat to Temperature,CIP_42_Step == 76
+Chemical 4 Circulation,CIP_42_Recipe == 2 && CIP_42_Step == 76
+Chemical 4 Circulation,CIP_42_Step != 76
+Fresh Water Rinse to Drain,CIP_42_Recipe == 2 && CIP_42_Step >= 2 && CIP_42_Step <= 9 || CIP_42_Recipe == 2 && CIP_42_Step >= 22 && CIP_42_Step <= 29 || CIP_42_Recipe == 2 && CIP_42_Step >= 42 && CIP_42_Step <= 49 || CIP_42_Recipe == 2 && CIP_42_Step >= 62 && CIP_42_Step <= 69 || CIP_42_Recipe == 2 && CIP_42_Step >= 82 && CIP_42_Step <= 89 || CIP_42_Recipe == 3 && CIP_42_Step >= 2 && CIP_42_Step <= 9 || CIP_42_Recipe == 3 && CIP_42_Step >= 22 && CIP_42_Step <= 29 || CIP_42_Recipe == 4 && CIP_42_Step >= 11 && CIP_42_Step <= 18 || CIP_42_Recipe == 5 && CIP_42_Step >= 2 && CIP_42_Step <= 9 || CIP_42_Recipe == 6 && CIP_42_Step >= 11 && CIP_42_Step <= 18
+Fresh Water Rinse to Drain,CIP_42_Recipe != 2 && CIP_42_Step <= 2 && CIP_42_Step >= 9 || CIP_42_Recipe != 2 && CIP_42_Step <= 22 && CIP_42_Step >= 29 || CIP_42_Recipe != 2 && CIP_42_Step <= 42 && CIP_42_Step >= 49 || CIP_42_Recipe != 2 && CIP_42_Step <= 62 && CIP_42_Step >= 69 || CIP_42_Recipe != 2 && CIP_42_Step <= 82 && CIP_42_Step >= 89 || CIP_42_Recipe != 3 && CIP_42_Step <= 2 && CIP_42_Step >= 9 || CIP_42_Recipe == 3 && CIP_42_Step >= 22 && CIP_42_Step <= 29 || CIP_42_Recipe == 4 && CIP_42_Step >= 11 && CIP_42_Step <= 18 || CIP_42_Recipe == 5 && CIP_42_Step >= 2 && CIP_42_Step <= 9 || CIP_42_Recipe != 6 && CIP_42_Step <= 11 && CIP_42_Step >= 18
+Sanitize Addition,CIP_42_Recipe == 6 && CIP_42_Step >= 3 && CIP_42_Step <= 4
+Sanitize Addition,CIP_42_Recipe != 6 && CIP_42_Step <= 3 && CIP_42_Step >= 4
+Sanitize Circulation,CIP_42_Recipe == 6 && CIP_42_Step == 5
+Sanitize Circulation,CIP_42_Recipe != 6 && CIP_42_Step != 5
+Soak Addition,CIP_42_Recipe == 4 && CIP_42_Step >= 3 && CIP_42_Step <= 4
+Soak Addition,CIP_42_Step == 5
+Soak Circulation,CIP_42_Recipe == 4 && CIP_42_Step == 5
+Soak Circulation,CIP_42_Step != 5
+Fresh Water Rinse to Drain,CIP_43_Step >= 1 && CIP_43_Step <= 2 || CIP_43_Step >= 4 && CIP_43_Step <= 5 || CIP_43_Step >= 7 && CIP_43_Step <= 8 || CIP_43_Step >= 10 && CIP_43_Step <= 11 || CIP_43_Step >= 13 && CIP_43_Step <= 14 || CIP_43_Step >= 16 && CIP_43_Step <= 17
+Fresh Water Rinse to Drain,CIP_43_Step <= 1 && CIP_43_Step >= 2 || CIP_43_Step <= 4 && CIP_43_Step >= 5 || CIP_43_Step <= 7 && CIP_43_Step >= 8 || CIP_43_Step <= 10 && CIP_43_Step >= 11 || CIP_43_Step <= 13 && CIP_43_Step >= 14 || CIP_43_Step <= 16 && CIP_43_Step >= 17
+Rec1 Addition and Heat to Temperature,CIP_43_Step == 3 && CIP_43_Wash_Temperature_Hold == 1 && CIP_43_High_Pressure_Pump_A == 0 && CIP_43_Feed_Pump_A == 1 && CIP_43_Step_Hold == 1 && CIP_43_Loop_Pump_B == 1
+Rec1 Addition and Heat to Temperature,CIP_43_Step == 3 && CIP_43_Wash_Temperature_Hold == false && CIP_43_Loop_Pump_A == true && CIP_43_High_Pressure_Pump_A == true
+Rec1 Circulation,CIP_43_Step == 3 && CIP_43_Wash_Temperature_Hold == false && CIP_43_High_Pressure_Pump_A == true && CIP_43_Loop_Pump_A == true
+Rec1 Circulation,CIP_43_Step != 3
+Rec2 Addition and Heat to Temperature,CIP_43_Step == 6 && CIP_43_Wash_Temperature_Hold == true && CIP_43_Loop_Pump_A == false && CIP_43_Feed_Pump_A == true && CIP_43_Step_Hold == true && CIP_43_Loop_Pump_B == true
+Rec2 Addition and Heat to Temperature,CIP_43_Step == 6 && CIP_43_Wash_Temperature_Hold == false && CIP_43_Loop_Pump_A == true && CIP_43_High_Pressure_Pump_A == true
+Rec2 Circulation,CIP_43_Step == 6 && CIP_43_Wash_Temperature_Hold == false && CIP_43_Loop_Pump_A == true && CIP_43_High_Pressure_Pump_A == true
+Rec2 Circulation,CIP_43_Step != 6
+Rec3 Addition and Heat to Temp,CIP_43_Step == 9 && CIP_43_Wash_Temperature_Hold == true && CIP_43_High_Pressure_Pump_A == false && CIP_43_Feed_Pump_A == true && CIP_43_Step_Hold == true && CIP_43_Loop_Pump_B == true
+Rec3 Addition and Heat to Temp,CIP_43_Step == 9 && CIP_43_Wash_Temperature_Hold == false && CIP_43_Loop_Pump_A == true && CIP_43_High_Pressure_Pump_A == true
+Rec3 Circulation,CIP_43_Step == 9 && CIP_43_Wash_Temperature_Hold == false && CIP_43_High_Pressure_Pump_A == true && CIP_43_Loop_Pump_A == true
+Rec3 Circulation,CIP_43_Step != 9
+Chemical 1 Addition and Heat to Temperature,CIP_44_Recipe == 2 && CIP_44_Step >= 7 && CIP_44_Step <= 9
+Chemical 1 Addition and Heat to Temperature,CIP_44_Step == 10 && CIP_44_Step_Timer_Timing == 1 || CIP_44_Step > 10
+Chemical 1 Circulation,CIP_44_Recipe == 2 && CIP_44_Step == 10 && CIP_44_Step_Timer_Timing == true
+Chemical 1 Circulation,CIP_44_Step != 10
+Chemical 2 Addition and Heat to Temperature,CIP_44_Recipe == 2 && CIP_44_Step >= 19 && CIP_44_Step <= 21
+Chemical 2 Addition and Heat to Temperature,CIP_44_Step == 22 && CIP_44_Step_Timer_Timing == 1 || CIP_44_Step > 22
+Chemical 2 Circulation,CIP_44_Recipe == 2 && CIP_44_Step == 22 && CIP_44_Step_Timer_Timing == true
+Chemical 2 Circulation,CIP_44_Step != 22
+Chemical 3 Addition and Heat to Temperature,CIP_44_Recipe == 2 && CIP_44_Step >= 31 && CIP_44_Step <= 33
+Chemical 3 Addition and Heat to Temperature,CIP_44_Step == 34 && CIP_44_Step_Timer_Timing == 1 || CIP_44_Step > 34
+Chemical 3 Circulation,CIP_44_Recipe == 2 && CIP_44_Step == 34 && CIP_44_Step_Timer_Timing == true
+Chemical 3 Circulation,CIP_44_Step != 34
+Chemical 4 Addition and Heat to Temperature,CIP_44_Recipe == 2 && CIP_44_Step >= 43 && CIP_44_Step <= 45
+Chemical 4 Addition and Heat to Temperature,CIP_44_Step == 46 && CIP_44_Step_Timer_Timing == 1 || CIP_44_Step > 46
+Chemical 4 Circulation,CIP_44_Recipe == 2 && CIP_44_Step == 46 && CIP_44_Step_Timer_Timing == true
+Chemical 4 Circulation,CIP_44_Step != 46
+Flux Test,CIP_44_Recipe == 2 && CIP_44_Step >= 52 && CIP_44_Step <= 56
+Flux Test,CIP_44_Recipe != 2 && CIP_44_Step <= 52 && CIP_44_Step >= 56
+Fresh Water Rinse to Drain,CIP_44_Recipe == 2 && CIP_44_Step == 2 || CIP_44_Recipe == 2 && CIP_44_Step == 14 || CIP_44_Recipe == 2 && CIP_44_Step == 26 || CIP_44_Recipe == 2 && CIP_44_Step == 38 || CIP_44_Recipe == 2 && CIP_44_Step == 50 || CIP_44_Recipe == 3 && CIP_44_Step == 2 || CIP_44_Recipe == 3 && CIP_44_Step == 14 || CIP_44_Recipe == 4 && CIP_44_Step == 12 || CIP_44_Recipe == 5 && CIP_44_Step == 2 || CIP_44_Recipe == 6 && CIP_44_Step == 10
+Fresh Water Rinse to Drain,CIP_44_Recipe != 2 && CIP_44_Step != 2 || CIP_44_Recipe != 2 && CIP_44_Step != 14 || CIP_44_Recipe != 2 && CIP_44_Step != 26 || CIP_44_Recipe != 2 && CIP_44_Step != 38 || CIP_44_Recipe != 2 && CIP_44_Step != 50 || CIP_44_Recipe != 3 && CIP_44_Step != 2 || CIP_44_Recipe != 3 && CIP_44_Step != 14 || CIP_44_Recipe != 4 && CIP_44_Step != 12 || CIP_44_Recipe != 5 && CIP_44_Step != 2 || CIP_44_Recipe != 6 && CIP_44_Step != 10
+Sanitize Circulation,CIP_44_Recipe == 6 && CIP_44_Step == 6
+Sanitize Circulation,CIP_44_Step != 6
+Sanitizer Addition,CIP_44_Recipe == 6 && CIP_44_Step >= 4 && CIP_44_Step <= 5
+Sanitizer Addition,CIP_44_Step == 6
+Short CIP Addition and Heat to Temp,CIP_44_Recipe == 3 && CIP_44_Step >= 7 && CIP_44_Step <= 9
+Short CIP Addition and Heat to Temp,CIP_44_Step == 10
+Short CIP Wash,CIP_44_Recipe == 3 && CIP_44_Step == 10
+Short CIP Wash,CIP_44_Step != 10
+Soak Addition,CIP_44_Recipe == 4 && CIP_44_Step >= 4 && CIP_44_Step <= 5
+Soak Addition,CIP_44_Step == 6
+Soak Circulation,CIP_44_Recipe == 4 && CIP_44_Step == 6
+Soak Circulation,CIP_44_Step != 6
+Chemical 2 Addition and Heat to Temperature,CIP_45_Recipe == 2 && CIP_45_Step >= 29 && CIP_45_Step <= 31
+Chemical 2 Addition and Heat to Temperature,CIP_45_Recipe != 2 && CIP_45_Step <= 29 && CIP_45_Step >= 31
+Chemical 2 Circulation,CIP_45_Recipe == 2 && CIP_45_Step == 32
+Chemical 2 Circulation,CIP_45_Recipe != 2 && CIP_45_Step != 32
+Chemical 3 Addition and Heat to Temperature,CIP_45_Recipe == 2 && CIP_45_Step >= 46 && CIP_45_Step <= 48
+Chemical 3 Addition and Heat to Temperature,CIP_45_Recipe != 2 && CIP_45_Step <= 46 && CIP_45_Step >= 48
+Chemical 3 Circulation,CIP_45_Recipe == 2 && CIP_45_Step == 49
+Chemical 3 Circulation,CIP_45_Recipe != 2 && CIP_45_Step != 49
+Chemical 4 Addition and Heat to Temperature,CIP_45_Recipe == 2 && CIP_45_Step >= 63 && CIP_45_Step <= 65
+Chemical 4 Addition and Heat to Temperature,CIP_45_Recipe != 2 && CIP_45_Step <= 63 && CIP_45_Step >= 65
+Chemical 4 Circulation,CIP_45_Recipe == 2 && CIP_45_Step == 66
+Chemical 4 Circulation,CIP_45_Recipe != 2 && CIP_45_Step != 66
+Rinse to Drain,CIP_45_Recipe == 2 && CIP_45_Step >= 1 && CIP_45_Step <= 11 || CIP_45_Recipe == 2 && CIP_45_Step >= 16 && CIP_45_Step <= 28 || CIP_45_Recipe == 2 && CIP_45_Step >= 33 && CIP_45_Step <= 45 || CIP_45_Recipe == 2 && CIP_45_Step >= 50 && CIP_45_Step <= 62 || CIP_45_Recipe == 2 && CIP_45_Step >= 67 || CIP_45_Recipe == 3 && CIP_45_Step >= 1 && CIP_45_Step <= 11 || CIP_45_Recipe == 3 && CIP_45_Step >= 16 || CIP_45_Recipe == 4 && CIP_45_Step >= 1 && CIP_45_Step <= 3 || CIP_45_Recipe == 4 && CIP_45_Step >= 9 || CIP_45_Recipe == 5 && CIP_45_Step >= 1 || CIP_45_Recipe == 6 && CIP_45_Step >= 1 && CIP_45_Step <= 3 || CIP_45_Recipe == 6 && CIP_45_Step >= 7
+Rinse to Drain,CIP_45_Recipe != 2 && CIP_45_Step <= 1 && CIP_45_Step >= 11 || CIP_45_Recipe != 2 && CIP_45_Step <= 16 && CIP_45_Step >= 28 || CIP_45_Recipe != 2 && CIP_45_Step <= 33 && CIP_45_Step >= 45 || CIP_45_Recipe != 2 && CIP_45_Step <= 50 && CIP_45_Step >= 62 || CIP_45_Recipe != 2 && CIP_45_Step <= 67 || CIP_45_Recipe != 3 && CIP_45_Step <= 1 && CIP_45_Step >= 11 || CIP_45_Recipe != 3 && CIP_45_Step <= 16 || CIP_45_Recipe != 4 && CIP_45_Step <= 1 && CIP_45_Step >= 3 || CIP_45_Recipe != 4 && CIP_45_Step <= 9 || CIP_45_Recipe != 5 && CIP_45_Step <= 1 || CIP_45_Recipe != 6 && CIP_45_Step <= 1 && CIP_45_Step >= 3 || CIP_45_Recipe != 6 && CIP_45_Step <= 7
+Sanitize Addition,CIP_45_Recipe == 6 && CIP_45_Step >= 4 && CIP_45_Step <= 5
+Sanitize Addition,CIP_45_Recipe == 6 && CIP_45_Step >= 4 && CIP_45_Step <= 5
+Sanitize Circulation,CIP_45_Recipe == 6 && CIP_45_Step == 6
+Sanitize Circulation,CIP_45_Recipe != 6 && CIP_45_Step != 6
+Soak,CIP_45_Recipe == 4 && CIP_45_Step == 8
+Soak,CIP_45_Recipe != 4 && CIP_45_Step != 8
+Soak Addition,CIP_45_Recipe == 4 && CIP_45_Step >= 4 && CIP_45_Step <= 7
+Soak Addition,CIP_45_Recipe != 4 && CIP_45_Step <= 4 && CIP_45_Step >= 7
+Chemical 1 Addition and Heat to Temperature,CIP_46_CIP == true && CIP_46_Step >= 7 && CIP_46_Step <= 9 || CIP_46_SHORT_CIP == true && CIP_46_Step >= 7 && CIP_46_Step <= 9
+Chemical 1 Addition and Heat to Temperature,CIP_46_CIP == true && CIP_46_Step == 10 && CIP_46_Step_Timer_Timing == true
+Chemical 1 Circulation,CIP_46_CIP == true && CIP_46_Step == 10 || CIP_46_SHORT_CIP == true && CIP_46_Step == 10
+Chemical 1 Circulation,CIP_46_Step != 10
+Chemical 2 Addition and Heat to Temperature,CIP_46_CIP == true && CIP_46_Step >= 19 && CIP_46_Step <= 21
+Chemical 2 Addition and Heat to Temperature,CIP_46_CIP == true && CIP_46_Step == 22 && CIP_46_Step_Timer_Timing == true
+Chemical 2 Circulation,CIP_46_CIP == true && CIP_46_Step == 22
+Chemical 2 Circulation,CIP_46_Step != 22
+Chemical 3 Addition and Heat to Temperature,CIP_46_CIP == true && CIP_46_Step >= 31 && CIP_46_Step <= 33
+Chemical 3 Addition and Heat to Temperature,CIP_46_CIP == true && CIP_46_Step == 34 && CIP_46_Step_Timer_Timing == true
+Chemical 3 Circulation,CIP_46_CIP == true && CIP_46_Step == 34
+Chemical 3 Circulation,CIP_46_Step != 34
+Flux Test,CIP_46_Recipe == 2 && CIP_46_Step >= 40 && CIP_46_Step <= 44
+Flux Test,CIP_46_Recipe != 2 && CIP_46_Step <= 40 && CIP_46_Step >= 44
+Rinse to Drain,CIP_46_CIP == true && CIP_46_Step == 2 || CIP_46_CIP == true && CIP_46_Step == 14 || CIP_46_CIP == true && CIP_46_Step == 26 || CIP_46_CIP == true && CIP_46_Step == 38 || CIP_46_SHORT_CIP == true && CIP_46_Step == 2 || CIP_46_SHORT_CIP == true && CIP_46_Step == 14 || CIP_46_Soak == true && CIP_46_Step == 12 || CIP_46_Rinse == true && CIP_46_Step == 2 || CIP_46_Sanitize == true && CIP_46_Step == 10 || CIP_46_CIP == true && CIP_46_Step >= 11 && CIP_46_Step <= 12 || CIP_46_CIP == true && CIP_46_Step >= 23 && CIP_46_Step <= 24 || CIP_46_CIP == true && CIP_46_Step >= 35 && CIP_46_Step <= 36 || CIP_46_CIP == true && CIP_46_Step >= 45 && CIP_46_Step <= 47
+Rinse to Drain,CIP_46_CIP != true && CIP_46_Step != 2 || CIP_46_CIP != true && CIP_46_Step != 14 || CIP_46_CIP != true && CIP_46_Step != 26 || CIP_46_CIP != true && CIP_46_Step != 38 || CIP_46_SHORT_CIP != true && CIP_46_Step != 2 || CIP_46_SHORT_CIP != true && CIP_46_Step != 14 || CIP_46_Soak != true && CIP_46_Step != 12 || CIP_46_Rinse != true && CIP_46_Step != 2 || CIP_46_Sanitize != true && CIP_46_Step != 10 || CIP_46_CIP != true && CIP_46_Step <= 11 && CIP_46_Step >= 12 || CIP_46_CIP != true && CIP_46_Step <= 23 && CIP_46_Step >= 24 || CIP_46_CIP != true && CIP_46_Step <= 35 && CIP_46_Step >= 36 || CIP_46_CIP != true && CIP_46_Step <= 45 && CIP_46_Step >= 47
+Sanitize Addition,CIP_46_Sanitize == true && CIP_46_Step >= 4 && CIP_46_Step <= 5
+Sanitize Addition,CIP_46_Sanitize != true && CIP_46_Step <= 4 && CIP_46_Step >= 5
+Sanitize Circulation,CIP_46_Sanitize == true && CIP_46_Step == 6
+Sanitize Circulation,CIP_46_Sanitize != true && CIP_46_Step != 6
+Soak,CIP_46_Soak == true && CIP_46_Step == 8
+Soak,CIP_46_Soak != true && CIP_46_Step != 8
+Soak Addition,CIP_46_Soak == true && CIP_46_Step >= 4 && CIP_46_Step <= 7
+Soak Addition,CIP_46_Soak == true && CIP_46_Step >= 4 && CIP_46_Step <= 7
+Acid Circulation,CIP_37_HTST_Active == 1 && CIP_37_HTST_Step == 2 || CIP_37_HTST_Step == 6
+Acid Circulation,CIP_37_HTST_Active != 1 && CIP_37_HTST_Step != 2 || CIP_37_HTST_Step != 6
+Caustic Circulation,CIP_37_HTST_Active == true && CIP_37_HTST_Step == 4
+Caustic Circulation,CIP_37_HTST_Active != true && CIP_37_HTST_Step != 4
+Fresh Water Rinse,CIP_37_HTST_Step == true || CIP_37_HTST_Step == 3 || CIP_37_HTST_Step == 5 || CIP_37_HTST_Step == 7
+Fresh Water Rinse,CIP_37_HTST_Step != true || CIP_37_HTST_Step != 3 || CIP_37_HTST_Step != 5 || CIP_37_HTST_Step != 7
+Sanitize,CIP_37_HTST_Active == true && CIP_37_HTST_Active == false
+Sanitize,CIP_37_HTST_Active != true && CIP_37_HTST_Active != false
+Chemical 1 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 2 && CIP_47_BL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_6 == false && CIP_47_Loop_Pump_7 == false && CIP_47_Loop_Pump_8 == false && CIP_47_Loop_Pump_9 == false
+Chemical 1 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 2 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 1 Circulation,CIP_47_Step_Back_Loops == 2 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 1 Circulation,CIP_47_Step_Back_Loops != 2
+Chemical 2 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 4 && CIP_47_BL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_6 == false && CIP_47_Loop_Pump_7 == false && CIP_47_Loop_Pump_8 == false && CIP_47_Loop_Pump_9 == false
+Chemical 2 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 4 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 2 Circulation,CIP_47_Step_Back_Loops == 4 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 2 Circulation,CIP_47_Step_Back_Loops != 4
+Chemical 3 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 6 && CIP_47_BL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_6 == false && CIP_47_Loop_Pump_7 == false && CIP_47_Loop_Pump_8 == false && CIP_47_Loop_Pump_9 == false
+Chemical 3 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 6 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 3 Circulation,CIP_47_Step_Back_Loops == 6 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 3 Circulation,CIP_47_Step_Back_Loops != 6
+Chemical 4 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 8 && CIP_47_BL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_6 == false && CIP_47_Loop_Pump_7 == false && CIP_47_Loop_Pump_8 == false && CIP_47_Loop_Pump_9 == false
+Chemical 4 Addition and Heat to Temperature,CIP_47_Step_Back_Loops == 8 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 4 Circulation,CIP_47_Step_Back_Loops == 8 && CIP_47_BL_Wash_Temperature_Hold == false
+Chemical 4 Circulation,CIP_47_Step_Back_Loops != 8
+Fresh Water Rinse to Drain,CIP_47_Step_Back_Loops == true || CIP_47_Step_Back_Loops == 3 || CIP_47_Step_Back_Loops == 5 || CIP_47_Step_Back_Loops == 7 || CIP_47_Step_Back_Loops == 9
+Fresh Water Rinse to Drain,CIP_47_Step_Back_Loops != true || CIP_47_Step_Back_Loops != 3 || CIP_47_Step_Back_Loops != 5 || CIP_47_Step_Back_Loops != 7 || CIP_47_Step_Back_Loops != 9
+Chemical 1 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 2 && CIP_47_FL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_1 == false && CIP_47_Loop_Pump_2 == false && CIP_47_Loop_Pump_3 == false && CIP_47_Loop_Pump_4 == false && CIP_47_Loop_Pump_5 == false
+Chemical 1 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 2 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 1 Circulation,CIP_47_Step_Front_Loops == 2 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 1 Circulation,CIP_47_Step_Front_Loops != 2
+Chemical 2 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 4 && CIP_47_FL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_1 == false && CIP_47_Loop_Pump_2 == false && CIP_47_Loop_Pump_3 == false && CIP_47_Loop_Pump_4 == false && CIP_47_Loop_Pump_5 == false
+Chemical 2 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 4 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 2 Circulation,CIP_47_Step_Front_Loops == 4 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 2 Circulation,CIP_47_Step_Front_Loops != 4
+Chemical 3 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 6 && CIP_47_FL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_1 == false && CIP_47_Loop_Pump_2 == false && CIP_47_Loop_Pump_3 == false && CIP_47_Loop_Pump_4 == false && CIP_47_Loop_Pump_5 == false
+Chemical 3 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 6 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 3 Circulation,CIP_47_Step_Front_Loops == 6 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 3 Circulation,CIP_47_Step_Front_Loops != 6
+Chemical 4 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 8 && CIP_47_FL_Wash_Temperature_Hold == true && CIP_47_Loop_Pump_1 == false && CIP_47_Loop_Pump_2 == false && CIP_47_Loop_Pump_3 == false && CIP_47_Loop_Pump_4 == false && CIP_47_Loop_Pump_5 == false
+Chemical 4 Addition and Heat to Temperature,CIP_47_Step_Front_Loops == 8 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 4 Circulation,CIP_47_Step_Front_Loops == 8 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 4 Circulation,CIP_47_Step_Front_Loops != 8
+Fresh Water Rinse to Drain,CIP_47_Step_Front_Loops == true || CIP_47_Step_Front_Loops == 3 || CIP_47_Step_Front_Loops == 5 || CIP_47_Step_Front_Loops == 7 || CIP_47_Step_Front_Loops == 9
+Fresh Water Rinse to Drain,CIP_47_Step_Front_Loops != true || CIP_47_Step_Front_Loops != 3 || CIP_47_Step_Front_Loops != 5 || CIP_47_Step_Front_Loops != 7 || CIP_47_Step_Front_Loops != 9
+Chemical 1 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 2 && CIP_47_FL_Wash_Temperature_Hold == true
+Chemical 1 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 2 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 1 Circulation,CIP_47_Step_Single_Loop == 2 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 1 Circulation,CIP_47_Step_Single_Loop != 2
+Chemical 2 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 4 && CIP_47_FL_Wash_Temperature_Hold == true
+Chemical 2 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 4 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 2 Circulation,CIP_47_Step_Single_Loop == 4 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 2 Circulation,CIP_47_Step_Single_Loop != 4
+Chemical 3 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 6 && CIP_47_FL_Wash_Temperature_Hold == true
+Chemical 3 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 6 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 3 Circulation,CIP_47_Step_Front_Loops == 6 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 3 Circulation,CIP_47_Step_Single_Loop != 6
+Chemical 4 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 8 && CIP_47_FL_Wash_Temperature_Hold == true
+Chemical 4 Addition and Heat to Temperature,CIP_47_Step_Single_Loop == 8 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 4 Circulation,CIP_47_Step_Single_Loop == 8 && CIP_47_FL_Wash_Temperature_Hold == false
+Chemical 4 Circulation,CIP_47_Step_Single_Loop != 8
+Fresh Water Rinse to Drain,CIP_47_Step_Single_Loop == true || CIP_47_Step_Single_Loop == 3 || CIP_47_Step_Single_Loop == 5 || CIP_47_Step_Single_Loop == 7 || CIP_47_Step_Single_Loop == 9
+Fresh Water Rinse to Drain,CIP_47_Step_Single_Loop != true || CIP_47_Step_Single_Loop != 3 || CIP_47_Step_Single_Loop != 5 || CIP_47_Step_Single_Loop != 7 || CIP_47_Step_Single_Loop != 9
+Fresh Water Rinse to Drain,CIP_48_Step == true || CIP_48_Step == 3 || CIP_48_Step == 5 || CIP_48_Step == 7 || CIP_48_Step == 9 || CIP_48_Step == 11
+Fresh Water Rinse to Drain,CIP_48_Step != true || CIP_48_Step != 3 || CIP_48_Step != 5 || CIP_48_Step != 7 || CIP_48_Step != 9 || CIP_48_Step != 11
+Recirc 1 Addition and Heat to Temperature,CIP_48_Step == 2 && CIP_48_Wash_Temperature_Hold == true && CIP_48_CIP_Pump == false
+Recirc 1 Addition and Heat to Temperature,CIP_48_Step == 2 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == 1 || CIP_48_Step > 2
+Recirc 1 Junk Wash Circulation,CIP_48_Step == 2 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 1 Junk Wash Circulation,CIP_48_Step != 2
+Recirc 2 Addition and Heat to Temperature,CIP_48_Step == 4 && CIP_48_Wash_Temperature_Hold == true && CIP_48_CIP_Pump == false
+Recirc 2 Addition and Heat to Temperature,CIP_48_Step == 4 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 2 Caustic Wash Circulation,CIP_48_Step == 4 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 2 Caustic Wash Circulation,CIP_48_Step != 4
+Recirc 3 Addition and Heat to Temperature,CIP_48_Step == 6 && CIP_48_Wash_Temperature_Hold == true && CIP_48_CIP_Pump == false
+Recirc 3 Addition and Heat to Temperature,CIP_48_Step == 6 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 3 Enzyme Wash Circulation,CIP_48_Step == 6 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 3 Enzyme Wash Circulation,CIP_48_Step != 6
+Recirc 4 Acid Wash Circulation,CIP_48_Step == 8 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 4 Acid Wash Circulation,CIP_48_Step != 8
+Recirc 4 Addition and Heat to Temperature Start,CIP_48_Step == 8 && CIP_48_Wash_Temperature_Hold == true && CIP_48_CIP_Pump == false
+Recirc 4 Addition and Heat to Temperature Stop,CIP_48_Step == 8 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 5 Addition and Heat to Temperature,CIP_48_Step == 10 && CIP_48_Wash_Temperature_Hold == true && CIP_48_CIP_Pump == false
+Recirc 5 Addition and Heat to Temperature,CIP_48_Step == 10 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 5 Alkaline Wash Circulation,CIP_48_Step == 10 && CIP_48_Wash_Temperature_Hold == false && CIP_48_CIP_Pump == true
+Recirc 5 Alkaline Wash Circulation,CIP_48_Step != 10
+1-4 Acid Wash 3 Addition and Heat to Temperature,CIP_49_Step_1 == 6 && CIP_49_Wash_Temperature_Hold_1 == true && CIP_49_Loop_Pump_1 == false
+1-4 Acid Wash 3 Addition and Heat to Temperature,CIP_49_Step_1 == 6 && CIP_49_1_Rec3_Step_TT == true
+1-4 Acid Wash 3 Circulation,CIP_49_Step_1 == 6 && CIP_49_1_Rec3_Step_TT == true && CIP_49_Loop_Pump_1 == true
+1-4 Acid Wash 3 Circulation,CIP_49_Step_1 != 6
+1-4 Alkaline Wash 4 Addition and Heat to Temp,CIP_49_Step_1 == 8 && CIP_49_Wash_Temperature_Hold_1 == true && CIP_49_Loop_Pump_1 == false
+1-4 Alkaline Wash 4 Addition and Heat to Temp,CIP_49_Step_1 == 8 && CIP_49_1_Rec4_Step_TT == true
+1-4 Alkaline Wash 4 Circulation,CIP_49_Step_1 == 8 && CIP_49_1_Rec4_Step_TT == true && CIP_49_Loop_Pump_1 == true
+1-4 Alkaline Wash 4 Circulation,CIP_49_Step_1 != 8
+1-4 Chemical 5 Addition and Heat to Temperature,CIP_49_Step_1 == 10 && CIP_49_Wash_Temperature_Hold_1 == true && CIP_49_Loop_Pump_1 == false
+1-4 Chemical 5 Addition and Heat to Temperature,CIP_49_Step_1 == 10 && CIP_49_1_Rec5_Step_TT == true
+1-4 Chemical 5 Circulation,CIP_49_Step_1 == 10 && CIP_49_1_Rec5_Step_TT == true && CIP_49_Loop_Pump_1 == true
+1-4 Chemical 5 Circulation,CIP_49_Step_1 != 10
+1-4 Enzyme Wash 2 Addition and Heat to Temp,CIP_49_Step_1 == 4 && CIP_49_Wash_Temperature_Hold_1 == true && CIP_49_Loop_Pump_1 == false
+1-4 Enzyme Wash 2 Addition and Heat to Temp,CIP_49_Step_1 == 4 && CIP_49_1_Rec2_Step_TT == true
+1-4 Enzyme Wash 2 Circulation,CIP_49_Step_1 == 4 && CIP_49_1_Rec2_Step_TT == true && CIP_49_Loop_Pump_1 == true
+1-4 Enzyme Wash 2 Circulation,CIP_49_Step_1 != 4
+1-4 Fresh Water Rinse to Drain,CIP_49_Step_1 == true || CIP_49_Step_1 == 3 || CIP_49_Step_1 == 5 || CIP_49_Step_1 == 7 || CIP_49_Step_1 == 9 || CIP_49_Step_1 == 11
+1-4 Fresh Water Rinse to Drain,CIP_49_Step_1 != true || CIP_49_Step_1 != 3 || CIP_49_Step_1 != 5 || CIP_49_Step_1 != 7 || CIP_49_Step_1 != 9 || CIP_49_Step_1 != 11
+1-4 Junk Wash 1 Addition and Heat to Temperature,CIP_49_Step_1 == 2 && CIP_49_Wash_Temperature_Hold_1 == true && CIP_49_Loop_Pump_1 == false
+1-4 Junk Wash 1 Addition and Heat to Temperature,CIP_49_Step_1 != 2 && CIP_49_1_Rec1_Step_TT != true
+1-4 Junk Wash 1 Circulation,CIP_49_Step_1 == 2 && CIP_49_1_Rec1_Step_TT == true && CIP_49_Loop_Pump_1 == true
+1-4 Junk Wash 1 Circulation,CIP_49_Step_1 != 2
+5-8 Acid Wash 3 Addition and Heat to Temperature,CIP_49_Step_2 == 6 && CIP_49_Wash_Temperature_Hold_2 == true && CIP_49_Loop_Pump_5 == false
+5-8 Acid Wash 3 Addition and Heat to Temperature,CIP_49_Step_2 == 6 && CIP_49_2_Rec3_Step_TT == true
+5-8 Acid Wash 3 Circulation,CIP_49_Step_2 == 6 && CIP_49_2_Rec3_Step_TT == true && CIP_49_Loop_Pump_5 == true
+5-8 Acid Wash 3 Circulation,CIP_49_Step_2 != 6
+5-8 Alkaline Wash 2 Addition and Heat to Temp,CIP_49_Step_2 == 4 && CIP_49_Wash_Temperature_Hold_2 == true && CIP_49_Loop_Pump_5 == false
+5-8 Alkaline Wash 2 Addition and Heat to Temp,CIP_49_Step_2 == 4 && CIP_49_2_Rec2_Step_TT == true
+5-8 Alkaline Wash 2 Circulation,CIP_49_Step_2 == 4 && CIP_49_2_Rec2_Step_TT == true && CIP_49_Loop_Pump_5 == true
+5-8 Alkaline Wash 2 Circulation,CIP_49_Step_2 != 4
+5-8 Alkaline Wash 4 Addition and Heat to Temp,CIP_49_Step_2 == 8 && CIP_49_Wash_Temperature_Hold_2 == true && CIP_49_Loop_Pump_5 == false
+5-8 Alkaline Wash 4 Addition and Heat to Temp,CIP_49_Step_2 == 8 && CIP_49_2_Rec4_Step_TT == true
+5-8 Alkaline Wash 4 Circulation,CIP_49_Step_2 == 8 && CIP_49_2_Rec4_Step_TT == true && CIP_49_Loop_Pump_5 == true
+5-8 Alkaline Wash 4 Circulation,CIP_49_Step_2 != 8
+5-8 Chemical 5 Addition and Heat to Temperature,CIP_49_Step_2 == 10 && CIP_49_Wash_Temperature_Hold_2 == true && CIP_49_Loop_Pump_5 == false
+5-8 Chemical 5 Addition and Heat to Temperature,CIP_49_Step_2 == 10 && CIP_49_2_Rec5_Step_TT == true
+5-8 Chemical 5 Circulation,CIP_49_Step_2 == 10 && CIP_49_2_Rec5_Step_TT == true && CIP_49_Loop_Pump_5 == true
+5-8 Chemical 5 Circulation,CIP_49_Step_2 != 10
+5-8 Fresh Water Rinse to Drain,CIP_49_Step_2 == true || CIP_49_Step_2 == 3 || CIP_49_Step_2 == 5 || CIP_49_Step_2 == 7 || CIP_49_Step_2 == 9 || CIP_49_Step_2 == 11
+5-8 Fresh Water Rinse to Drain,CIP_49_Step_2 != true || CIP_49_Step_2 != 3 || CIP_49_Step_2 != 5 || CIP_49_Step_2 != 7 || CIP_49_Step_2 != 9 || CIP_49_Step_2 != 11
+5-8 Junk Wash 1 Addition and Heat to Temperature,CIP_49_Step_2 == 2 && CIP_49_Wash_Temperature_Hold_2 == true && CIP_49_Loop_Pump_5 == false
+5-8 Junk Wash 1 Addition and Heat to Temperature,CIP_49_Step_2 == 2 && CIP_49_2_Rec1_Step_TT == true
+5-8 Junk Wash 1 Circulation,CIP_49_Step_2 == 2 && CIP_49_2_Rec1_Step_TT == true && CIP_49_Loop_Pump_5 == true
+5-8 Junk Wash 1 Circulation,CIP_49_Step_2 != 2
+Fresh Water Rinse to Drain,CIP_50_Recipe == 2 && CIP_50_Step == 2 || CIP_50_Recipe == 2 && CIP_50_Step == 13 || CIP_50_Recipe == 2 && CIP_50_Step == 24 || CIP_50_Recipe == 2 && CIP_50_Step == 35 || CIP_50_Recipe == 2 && CIP_50_Step == 46 || CIP_50_Recipe == 3 && CIP_50_Step == 2 || CIP_50_Recipe == 3 && CIP_50_Step == 13 || CIP_50_Recipe == 4 && CIP_50_Step == 9 || CIP_50_Recipe == 5 && CIP_50_Step == 2 || CIP_50_Recipe == 6 && CIP_50_Step == 9
+Fresh Water Rinse to Drain,CIP_50_Recipe != 2 && CIP_50_Step != 2 || 0
+Sanitize Addition,CIP_50_Recipe == 6 && CIP_50_Step >= 2 && CIP_50_Step <= 3
+Sanitize Addition,CIP_50_Recipe == 6 && CIP_50_Step == 4
+Sanitize Circulation,CIP_50_Recipe == 6 && CIP_50_Step == 4
+Sanitize Circulation,CIP_50_Recipe == 6 && CIP_50_Step != 4
+Soak,CIP_50_Recipe == 4 && CIP_50_Step == 4
+Soak,CIP_50_Recipe == 4 && CIP_50_Step != 4
+Soak Addition,CIP_50_Recipe == 4 && CIP_50_Step >= 2 && CIP_50_Step <= 3
+Soak Addition,CIP_50_Recipe == 4 && CIP_50_Step == 4
+Sanitize Circulation,CIP_50_Recipe == 6 && CIP_50_Step == 4
+Sanitize Circulation,CIP_50_Recipe == 6 && CIP_50_Step != 4
+Soak,CIP_50_Recipe == 4 && CIP_50_Step == 4
+Soak,CIP_50_Recipe == 4 && CIP_50_Step != 4
+Soak Addition,CIP_50_Recipe == 4 && CIP_50_Step >= 2 && CIP_50_Step <= 3
+Soak Addition,CIP_50_Recipe != 4 && CIP_50_Step != 4
+Wash 1 Circulation,CIP_50_Recipe == 2 && CIP_50_Step == 8
+Wash 1 Circulation,CIP_50_Step != 8
+Wash 2 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step >= 16 && CIP_50_Step <= 18 || CIP_50_Recipe == 3 && CIP_50_Step >= 5 && CIP_50_Step <= 7
+Wash 2 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step == 19 || CIP_50_Recipe == 3 && CIP_50_Step == 8
+Wash 2 Circulation,CIP_50_Recipe == 2 && CIP_50_Step == 19 || CIP_50_Recipe == 3 && CIP_50_Step == 8
+Wash 2 Circulation,CIP_50_Step != 19 && CIP_50_Step != 8
+Wash 3 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step >= 27 && CIP_50_Step <= 29
+Wash 3 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step == 30
+Wash 3 Circulation,CIP_50_Recipe == 2 && CIP_50_Step == 30
+Wash 3 Circulation,CIP_50_Step != 30
+Wash 4 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step >= 38 && CIP_50_Step <= 40
+Wash 4 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step == 41
+Wash 4 Circulation,CIP_50_Recipe == 2 && CIP_50_Step == 41
+Wash 4 Circulation,CIP_50_Step != 41
+Wash 4 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step >= 38 && CIP_50_Step <= 40
+Wash 4 Addition and Heat to Temperature,CIP_50_Recipe == 2 && CIP_50_Step == 41
+Wash 4 Circulation,CIP_50_Recipe == 2 && CIP_50_Step == 41
+Wash 4 Circulation,CIP_50_Step != 41
+Flux Test,CIP_51_Recipe == 2 && CIP_51_Step >= 105 && CIP_51_Step <= 109
+Flux Test,CIP_51_Recipe != 2 && CIP_51_Step <= 105 && CIP_51_Step >= 109
+Fresh Water Rinse to Drain,CIP_51_Recipe == 2 && CIP_51_Step >= 2 && CIP_51_Step <= 11 || CIP_51_Recipe == 2 && CIP_51_Step >= 25 && CIP_51_Step <= 34 || CIP_51_Recipe == 2 && CIP_51_Step >= 48 && CIP_51_Step <= 57 || CIP_51_Recipe == 2 && CIP_51_Step >= 71 && CIP_51_Step <= 80 || CIP_51_Recipe == 2 && CIP_51_Step >= 94 && CIP_51_Step <= 103 || CIP_51_Recipe == 3 && CIP_51_Step >= 2 && CIP_51_Step <= 11 || CIP_51_Recipe == 3 && CIP_51_Step >= 25 && CIP_51_Step <= 34 || CIP_51_Recipe == 4 && CIP_51_Step >= 12 && CIP_51_Step <= 21 || CIP_51_Recipe == 5 && CIP_51_Step >= 2 && CIP_51_Step <= 11 || CIP_51_Recipe == 6 && CIP_51_Step >= 12 && CIP_51_Step <= 21
+Fresh Water Rinse to Drain,CIP_51_Recipe != 2 && CIP_51_Step <= 2 && CIP_51_Step >= 11 || CIP_51_Recipe != 2 && CIP_51_Step <= 25 && CIP_51_Step >= 34 || CIP_51_Recipe != 2 && CIP_51_Step <= 48 && CIP_51_Step >= 57 || CIP_51_Recipe != 2 && CIP_51_Step <= 71 && CIP_51_Step >= 80 || CIP_51_Recipe != 2 && CIP_51_Step <= 94 && CIP_51_Step >= 103 || CIP_51_Recipe != 3 && CIP_51_Step <= 2 && CIP_51_Step >= 11 || CIP_51_Recipe != 3 && CIP_51_Step <= 25 && CIP_51_Step >= 34 || CIP_51_Recipe != 4 && CIP_51_Step <= 12 && CIP_51_Step >= 21 || CIP_51_Recipe != 5 && CIP_51_Step <= 2 && CIP_51_Step >= 11 || CIP_51_Recipe != 6 && CIP_51_Step <= 12 && CIP_51_Step >= 21
+Sanitize Addition,CIP_51_Recipe == 6 && CIP_51_Step >= 4 && CIP_51_Step <= 5
+Sanitize Addition,CIP_51_Recipe == 6 && CIP_51_Step >= 4 && CIP_51_Step <= 5
+Wash 1 Addition and Heat to Temperature,CIP_51_Recipe == 2 && CIP_51_Step >= 16 && CIP_51_Step <= 18
+Wash 1 Addition and Heat to Temperature,CIP_51_Step == 19 && CIP_51_Step_Timer_Timing == 1 || CIP_51_Step > 19
+Wash 1 Circulation,CIP_51_Recipe == 2 && CIP_51_Step == 19 && CIP_51_Step_Timer_Timing == true
+Wash 1 Circulation,CIP_51_Step != 19
+Wash 2 Addition and Heat to Temperature,CIP_51_Recipe == 2 && CIP_51_Step >= 39 && CIP_51_Step <= 41 || CIP_51_Recipe == 3 && CIP_51_Step >= 16 && CIP_51_Step <= 18
+Wash 2 Addition and Heat to Temperature,CIP_51_Step == 42 && CIP_51_Step_Timer_Timing == 1 || CIP_51_Step == 19 && CIP_51_Step_Timer_Timing == true
+Wash 2 Circulation,CIP_51_Recipe == 2 && CIP_51_Step == 42 && CIP_51_Step_Timer_Timing == 1 || CIP_51_Recipe == 3 && CIP_51_Step == 19 && CIP_51_Step_Timer_Timing == true
+Wash 2 Circulation,CIP_51_Step != 42 && CIP_51_Step != 19
+Wash 3 Addition and Heat to Temperature,CIP_51_Recipe == 2 && CIP_51_Step >= 62 && CIP_51_Step <= 64
+Wash 3 Addition and Heat to Temperature,CIP_51_Step == 65 && CIP_51_Step_Timer_Timing == true
+Wash 3 Circulation,CIP_51_Recipe == 2 && CIP_51_Step == 65 && CIP_51_Step_Timer_Timing == true
+Wash 3 Circulation,CIP_51_Step != 65
+Wash 4 Addition and Heat to Temperature,CIP_51_Recipe == 2 && CIP_51_Step >= 85 && CIP_51_Step <= 87
+Wash 4 Addition and Heat to Temperature,CIP_51_Recipe != 2 && CIP_51_Step <= 85 && CIP_51_Step >= 87
+Wash 4 Circulation,CIP_51_Recipe == 2 && CIP_51_Step == 88
+Wash 4 Circulation,CIP_51_Recipe != 2 && CIP_51_Step != 88
+Chemical 1 Addition and Heat to Temperature,CIP_52_Recipe == 2 && CIP_52_Step >= 13 && CIP_52_Step <= 15
+Chemical 1 Addition and Heat to Temperature,CIP_52_Step == 16 && CIP_52_Step_Timer_Timing == true
+Chemical 1 Circulation,CIP_52_Recipe == 2 && CIP_52_Step == 16 && CIP_52_Step_Timer_Timing == true
+Chemical 1 Circulation,CIP_52_Step != 16
+Chemical 2 Addition and Heat to Temperature,CIP_52_Recipe == 2 && CIP_52_Step >= 33 && CIP_52_Step <= 35 || CIP_52_Recipe == 3 && CIP_52_Step >= 13 && CIP_52_Step <= 15
+Chemical 2 Addition and Heat to Temperature,CIP_52_Step == 36 && CIP_52_Step_Timer_Timing == 1 || CIP_52_Step == 16 && CIP_52_Step_Timer_Timing == true
+Chemical 2 Circulation,CIP_52_Recipe == 2 && CIP_52_Step == 36 && CIP_52_Step_Timer_Timing == 1 || CIP_52_Recipe == 3 && CIP_52_Step == 16 && CIP_52_Step_Timer_Timing == true
+Chemical 2 Circulation,CIP_52_Step != 36 && CIP_52_Step != 16
+Chemical 3 Addition and Heat to Temperature,CIP_52_Recipe == 2 && CIP_52_Step >= 53 && CIP_52_Step <= 55
+Chemical 3 Addition and Heat to Temperature,CIP_52_Step == 56 && CIP_52_Step_Timer_Timing == true
+Chemical 3 Circulation,CIP_52_Recipe == 2 && CIP_52_Step == 56 && CIP_52_Step_Timer_Timing == true
+Chemical 3 Circulation,CIP_52_Step != 56
+Chemical 4 Addition and Heat to Temperature,CIP_52_Recipe == 2 && CIP_52_Step >= 73 && CIP_52_Step <= 75
+Chemical 4 Addition and Heat to Temperature,CIP_52_Step == 76 && CIP_52_Step_Timer_Timing == true
+Chemical 4 Circulation,CIP_52_Recipe == 2 && CIP_52_Step == 76 && CIP_52_Step_Timer_Timing == true
+Chemical 4 Circulation,CIP_52_Step != 76
+Chemical 5 Addition and Heat to Temperature,CIP_52_Recipe == 2 && CIP_52_Step >= 93 && CIP_52_Step <= 95
+Chemical 5 Addition and Heat to Temperature,CIP_52_Step == 96 && CIP_52_Step_Timer_Timing == true
+Chemical 5 Circulation,CIP_52_Recipe == 2 && CIP_52_Step == 96 && CIP_52_Step_Timer_Timing == true
+Chemical 5 Circulation,CIP_52_Step != 96
+Flux Test,CIP_52_Recipe == 2 && CIP_52_Step >= 110 && CIP_52_Step <= 114
+Flux Test,CIP_52_Recipe != 2 && CIP_52_Step <= 110 && CIP_52_Step >= 114
+Fresh Water Rinse to Drain,CIP_52_Recipe == 2 && CIP_52_Step >= 2 && CIP_52_Step <= 8 || CIP_52_Recipe == 2 && CIP_52_Step >= 22 && CIP_52_Step <= 28 || CIP_52_Recipe == 2 && CIP_52_Step >= 42 && CIP_52_Step <= 48 || CIP_52_Recipe == 2 && CIP_52_Step >= 62 && CIP_52_Step <= 68 || CIP_52_Recipe == 2 && CIP_52_Step >= 82 && CIP_52_Step <= 88 || CIP_52_Recipe == 2 && CIP_52_Step >= 102 && CIP_52_Step <= 108 || CIP_52_Recipe == 3 && CIP_52_Step >= 2 && CIP_52_Step <= 8 || CIP_52_Recipe == 3 && CIP_52_Step >= 22 && CIP_52_Step <= 28 || CIP_52_Recipe == 4 && CIP_52_Step >= 12 && CIP_52_Step <= 18 || CIP_52_Recipe == 5 && CIP_52_Step >= 2 && CIP_52_Step <= 8 || CIP_52_Recipe == 6 && CIP_52_Step >= 12 && CIP_52_Step <= 18
+Fresh Water Rinse to Drain,CIP_52_Recipe != 2 && CIP_52_Step <= 2 && CIP_52_Step >= 8 || CIP_52_Recipe != 2 && CIP_52_Step <= 22 && CIP_52_Step >= 28 || CIP_52_Recipe != 2 && CIP_52_Step <= 42 && CIP_52_Step >= 48 || CIP_52_Recipe != 2 && CIP_52_Step <= 62 && CIP_52_Step >= 68 || CIP_52_Recipe != 2 && CIP_52_Step <= 82 && CIP_52_Step >= 88 || CIP_52_Recipe != 2 && CIP_52_Step <= 102 && CIP_52_Step >= 108 || CIP_52_Recipe != 3 && CIP_52_Step <= 2 && CIP_52_Step >= 8 || CIP_52_Recipe != 3 && CIP_52_Step <= 22 && CIP_52_Step >= 28 || CIP_52_Recipe != 4 && CIP_52_Step <= 12 && CIP_52_Step >= 18 || CIP_52_Recipe != 5 && CIP_52_Step <= 2 && CIP_52_Step >= 8 || CIP_52_Recipe != 6 && CIP_52_Step <= 12 && CIP_52_Step >= 18
+Sanitize Addition,CIP_52_Recipe == 6 && CIP_52_Step >= 4 && CIP_52_Step <= 5
+Sanitize Addition,CIP_52_Recipe != 6 && CIP_52_Step <= 4 && CIP_52_Step >= 5
+Soak Circulation,CIP_52_Recipe == 4 && CIP_52_Step >= 6 && CIP_52_Step <= 8
+Soak Circulation,CIP_52_Recipe != 4 && CIP_52_Step <= 6 && CIP_52_Step >= 8
+Acid Circulation,CIP_38_Acid_Seq == true
+Acid Circulation,CIP_38_Acid_Seq != true
+Caustic Circulation,CIP_38_Caustic_Seq == true
+Caustic Circulation,CIP_38_Caustic_Seq != true
+Fresh Water Rinse,CIP_38_Pre_Rinse_Seq == true || CIP_38_Rinse_Seq == true || CIP_38_Final_Rinse_Seq == true
+Fresh Water Rinse,CIP_38_Pre_Rinse_Seq != true || CIP_38_Rinse_Seq != true || CIP_38_Final_Rinse_Seq != true
