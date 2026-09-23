@@ -100,6 +100,7 @@ Supported grammar: tag names (`[A-Za-z_][A-Za-z0-9_]*`), `true`/`false`, numbers
 | `--limit` | all rows | Only the first N rows, for cheap smoke runs. |
 | `--retries` | `2` | Extra attempts per request for retryable errors such as a 429 or 529. `0` shows the raw failure rate. |
 | `--model` | `jev-latest` | TypeSafe model ID or alias. The cost column assumes Jev's input price. |
+| `--trace` | off | Print every answer as it lands: ID, P(yes), ✓/✗ against ground truth, the expression and the state it was judged against. Useful for watching a run or recording one. |
 
 ```sh
 node bench.mts --batch 1,25,50,100 --concurrency 128    # sweep expressions per request

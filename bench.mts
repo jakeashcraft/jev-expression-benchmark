@@ -23,6 +23,7 @@ const { values: args } = parseArgs({
     limit: { type: 'string' }, // only the first N rows, for cheap smoke runs
     retries: { type: 'string', default: '2' }, // per request, for retryable errors; 0 shows the raw failure rate
     model: { type: 'string', default: 'jev-latest' },
+    trace: { type: 'boolean', default: false }, // print every answer as it lands: id, P(yes), ✓/✗, expression, state
   },
 });
 const maxRetries = Number(args.retries);
@@ -143,8 +144,9 @@ function buildRequests(batch: number): Request[] {
 // The SDK's own retry backs off from 500 ms and hides the count, so it is off (maxRetries: 0) and
 // retryable errors are retried below after a short jittered delay, and counted.
 const client = new TypeSafeClient({ timeout: 60_000, retry: { maxRetries: 0 } });
+const trace: { at: number; lines: string[] }[] = []; // --trace output for the current pass, one entry per answered request
 
-async function send({ state, questions }: Payload): Promise<Outcome> {
+async function send({ state, questions, rows = [] }: Payload & { rows?: Row[] }): Promise<Outcome> {
   const started = performance.now(); // ms covers every attempt and delay: it is how long the caller waited
   for (let retries = 0; ; retries++) {
     try {
@@ -153,6 +155,12 @@ async function send({ state, questions }: Payload): Promise<Outcome> {
       // Envoy's header: how long TypeSafe's edge proxy waited on the service behind it, so ms minus this is
       // network + proxy. It is not in TypeSafe's docs, so it may vanish; the column is then NaN.
       const serverMs = Number(response.headers.get('x-envoy-upstream-service-time')) || undefined;
+      // Stamped now and printed after the pass: a Windows PTY takes seconds to render 975 lines, which would land on the clock.
+      if (args.trace && rows.length) trace.push({ at: performance.now(), lines: rows.map(row => {
+        const p = data.answers[row.id].noul;
+        const mark = p >= 0.5 === row.expected ? '\x1b[32m✓\x1b[0m' : '\x1b[31m✗\x1b[0m';
+        return `${row.id.padEnd(4)} ${p.toFixed(2)} ${mark}  ${row.expr.slice(0, 64).padEnd(64)}  \x1b[2m${row.tags.map(tag => `${tag}=${state[tag]}`).join(' ').slice(0, 62)}\x1b[0m`;
+      }) });
       return { ms, serverMs, retries, tokens: data.usage.input_tokens, answers: data.answers };
     } catch (error) {
       const { message, retryAfterMs } = error as { message: string; retryAfterMs?: number }; // an APIError's message leads with its status
@@ -208,6 +216,15 @@ for (const batch of integers(args.batch)) { // repeat a value (--batch 50,50,50)
     const started = performance.now();
     const outcomes = await sendAll(requests, concurrency);
     const wallMs = performance.now() - started;
+
+    // Replay each request's answers at the moment they landed, relative to the start of the pass.
+    const replayStarted = performance.now();
+    for (const { at, lines } of trace) {
+      const delay = at - started - (performance.now() - replayStarted);
+      if (delay > 1) await sleep(delay);
+      process.stdout.write(lines.join('\n') + '\n');
+    }
+    trace.length = 0;
 
     const scored = outcomes.flatMap((outcome, index) =>
       (outcome.answers ? requests[index].rows : []).map(row => {
